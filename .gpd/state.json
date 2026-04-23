@@ -1,10 +1,10 @@
 {
   "_version": 1,
-  "_synced_at": "2026-04-23T00:00:00Z",
+  "_synced_at": "2026-04-24T00:00:00Z",
   "project_reference": {
-    "project_md_updated": "2026-04-23",
+    "project_md_updated": "2026-04-24",
     "core_research_question": "Can gnosis-indus be migrated into a truthful standalone anchor application and evidence repo without losing the scientific caveats that justify the lane?",
-    "current_focus": "Phase 01 is active: admit source families, freeze authority boundaries, and prepare the first clean extraction target."
+    "current_focus": "Phase 01 Plan 01 complete: first extraction slice chosen (search-without-decode); repo is ready for Phase 02 runtime extraction after verification."
   },
   "project_contract": {
     "schema_version": 1,
@@ -21,7 +21,6 @@
         "cuneiform or shared-kernel extraction beyond boundary notes"
       ],
       "unresolved_questions": [
-        "Which runtime slice should be extracted first?",
         "Which derived artifacts are safe to vendor before a fetch manifest exists?",
         "What final release metadata will the owner supply?"
       ]
@@ -273,20 +272,23 @@
     "total_phases": 4,
     "current_plan": "1",
     "total_plans_in_phase": 1,
-    "status": "READY",
-    "last_activity": "2026-04-23",
-    "last_activity_desc": "Instantiated the workstream pack and specialized the repo-local control plane.",
-    "progress_percent": 30,
+    "status": "COMPLETE",
+    "last_activity": "2026-04-24",
+    "last_activity_desc": "Executed Phase 01 Plan 01: chose search-without-decode as the first runtime extraction slice, tightened data and legal boundaries, wired the Phase 02 target smoke expectation.",
+    "progress_percent": 60,
     "paused_at": null
   },
   "active_calculations": [],
   "intermediate_results": [
     "Authority bundle copied under authority/",
     "Starter package root created under src/gnosis_indus/",
-    "Boundary docs and export contract written"
+    "Boundary docs and export contract written",
+    "First extraction slice chosen: phase4_search_demo.py -> src/gnosis_indus/search_surface/",
+    "Phase 4 catalogue and Phase 5 falsification families sequenced as explicit second and third waves",
+    "DATA_POLICY first-slice classification table admits derived cluster tables and catalogue JSON as PUBLIC_LATER",
+    "SMOKE_TESTS declares a Phase 02 target smoke asserting Track C latency < 100 ms and compression >= 5x"
   ],
   "open_questions": [
-    "Which runtime slice should be extracted first?",
     "Which derived artifacts are safe to vendor before a fetch manifest exists?",
     "What final release metadata will the owner supply?"
   ],
@@ -313,6 +315,11 @@
       "phase": "00",
       "summary": "Preserve the Phase 4 caveat across front-door docs.",
       "rationale": "Packaging cannot outrun the copied authority docs."
+    },
+    {
+      "phase": "01",
+      "summary": "First extraction slice chosen: phase4_search_demo.py -> src/gnosis_indus/search_surface/.",
+      "rationale": "Lowest rights-gate risk (derived cluster IDs only), smallest helper-dependency footprint, and cleanest stronger-smoke-path story. Phase 4 catalogue and Phase 5 falsification families follow as explicit second and third waves."
     }
   ],
   "convention_lock": {
@@ -342,17 +349,19 @@
   },
   "propagated_uncertainties": [
     "Final license and public contact are owner-deferred.",
-    "The first extraction slice is not yet chosen."
+    "Runtime dependency list is not frozen until the first slice lands in Phase 02."
   ],
   "pending_todos": [
-    "Execute Phase 01 Plan 01.",
-    "Choose the first clean extraction target.",
-    "Strengthen the smoke path in Phase 02."
+    "Advance orchestrator to Phase 02 after verification.",
+    "Extract scripts/indus/phase4_search_demo.py into src/gnosis_indus/search_surface/ in Phase 02 Plan 01.",
+    "Co-land a small derived artifacts/phase4/indus_catalogue.json for the smoke path.",
+    "Implement the Phase 02 target smoke path declared in SMOKE_TESTS.md.",
+    "Freeze the runtime dependency list once the first slice lands."
   ],
   "blockers": [],
   "session": {
-    "last_date": "2026-04-23T00:00:00Z",
-    "stopped_at": "Scaffold and control plane completed; Phase 01 ready to open.",
-    "resume_file": ".gpd/phases/01-source-truth-and-authority-admission/01-01-PLAN.md"
+    "last_date": "2026-04-24T00:00:00Z",
+    "stopped_at": "Phase 01 Plan 01 complete; first extraction slice chosen (search-without-decode); waiting for orchestrator to verify and advance to Phase 02.",
+    "resume_file": ".gpd/ROADMAP.md"
   }
 }

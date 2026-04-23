@@ -86,9 +86,14 @@ declared falsification battery?
 
 ### Open Contract Questions
 
-- Which Phase 4 or Phase 5 runtime slice should land first under `src/gnosis_indus/`?
 - Which derived JSON artifacts are safe to vendor before a fetch plan exists?
 - What public license and contact surface will eventually govern the repo?
+
+_(Resolved in Phase 01 Plan 01: the first runtime slice under
+`src/gnosis_indus/` is the search-without-decode application surface,
+i.e. `scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`.
+See `SOURCE_BOUNDARY.md` and `MIGRATION_PLAN.md` for the justification and
+execution order.)_
 
 ## Research Questions
 
@@ -96,12 +101,17 @@ declared falsification battery?
 
 - [x] Should `gnosis-indus` be treated as an anchor application rather than the
       portfolio lead? Yes.
+- [x] Which source family lands first as a runtime slice under
+      `src/gnosis_indus/`? The search-without-decode application surface
+      (`scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`).
+      Phase 4 catalogue and Phase 5 falsification families are sequenced
+      as the second and third waves.
 
 ### Active
 
-- [ ] Which source families should be admitted in the first extraction wave?
 - [ ] Which assets stay fetch-only because of size or rights?
 - [ ] What is the minimal truthful smoke path beyond starter import?
+      _(Target shape declared in `SMOKE_TESTS.md`; becomes real in Phase 02.)_
 
 ### Out Of Scope
 

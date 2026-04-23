@@ -15,7 +15,7 @@ until the active gate is closed or honestly blocked.
 
 - [x] **Phase 00: Workstream Bootstrap** - Initialize the repo-local GPD
       surfaces and starter package.
-- [ ] **Phase 01: Source Truth And Authority Admission** - Freeze authority,
+- [x] **Phase 01: Source Truth And Authority Admission** - Freeze authority,
       source, and data boundaries before runtime extraction.
 - [ ] **Phase 02: Extraction And Minimal Replay Surface** - Land the first
       clean runtime slice and a stronger smoke path.
@@ -56,7 +56,7 @@ boundary, and data-rights posture before runtime extraction.
 
 Plans:
 
-- [ ] **01-01**: Freeze source truth and authority boundaries
+- [x] **01-01**: Freeze source truth and authority boundaries (completed 2026-04-24)
 
 ### Phase 02: Extraction And Minimal Replay Surface
 
@@ -71,7 +71,7 @@ Plans:
 
 Plans:
 
-- [ ] **02-01**: [TBD]
+- [ ] **02-01**: Extract the first clean runtime slice — search-without-decode application surface (`scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`) plus the Phase 02 target smoke path declared in `SMOKE_TESTS.md`.
 
 ### Phase 03: Truth-Preserving Packaging
 
@@ -94,6 +94,6 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 | ----- | -------------- | ------ | --------- |
 | 00. Workstream Bootstrap | 1/1 | Complete | 2026-04-23 |
-| 01. Source Truth And Authority Admission | 0/1 | Ready | - |
-| 02. Extraction And Minimal Replay Surface | 0/TBD | Pending | - |
+| 01. Source Truth And Authority Admission | 1/1 | Complete | 2026-04-24 |
+| 02. Extraction And Minimal Replay Surface | 0/1 | Pending | - |
 | 03. Truth-Preserving Packaging | 0/TBD | Pending | - |

@@ -26,8 +26,11 @@ scientific caveats that justify the lane?
 
 - [x] **CALC-01**: Build a coherent front-door and authority surface.
 - [x] **CALC-02**: Land a minimal package root and starter smoke path.
-- [ ] **CALC-03**: Choose the first clean extraction target for real runtime
-      migration.
+- [x] **CALC-03**: Choose the first clean extraction target for real runtime
+      migration. _(Phase 01 Plan 01: search-without-decode application
+      surface, `scripts/indus/phase4_search_demo.py` →
+      `src/gnosis_indus/search_surface/`; see `SOURCE_BOUNDARY.md` and
+      `MIGRATION_PLAN.md`.)_
 
 ### Simulation And Implementation
 
