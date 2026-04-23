@@ -8,10 +8,21 @@ version = "0.0.0"
 description = "Staged anchor application and evidence repo for the Gnosis Indus Atlas lane."
 readme = "README.md"
 requires-python = ">=3.11"
+# The Phase 02 search_surface slice is pure stdlib. numpy is exposed as
+# an optional extra so later latency tuning can lean on it without
+# forcing it on every consumer.
 dependencies = []
+
+[project.optional-dependencies]
+numerics = ["numpy>=1.24"]
+test = ["pytest>=8"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
