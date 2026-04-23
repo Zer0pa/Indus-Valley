@@ -92,7 +92,7 @@ that cannot be removed locally or on admitted surfaces.
 ### Propagated Uncertainties
 
 - final license and public contact are owner-deferred
-- first extraction slice is not yet chosen
+- first-slice runtime dependency list stays unfrozen until `scripts/indus/phase4_search_demo.py` is actually extracted in Phase 02 Plan 01 (expected minimum: `numpy` plus stdlib)
 
 ### Pending Todos
 
