@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Testing / linting caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local artefacts and large data (kept off GitHub, lives on HF)
+/data/
+/artifacts/
+/outputs/
+/cache/
+/.hf_cache/
+/models/
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.parquet
+*.feather
+
+# Large image families (rights-gated; never vendored)
+*.tif
+*.tiff
+# PNG/JPG can be shipped case-by-case; the repo's DATA_POLICY.md governs
+# what's admitted — so allow small doc/fig PNGs in docs/ and authority/ only
+/src/**/*.png
+/src/**/*.jpg
+/src/**/*.jpeg
+
+# Secrets and local overrides
+.env.local
+secrets.yaml
+credentials.json
+
+# Runtime / logs
+*.log
+logs/

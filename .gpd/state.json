@@ -1,0 +1,358 @@
+{
+  "_version": 1,
+  "_synced_at": "2026-04-23T00:00:00Z",
+  "project_reference": {
+    "project_md_updated": "2026-04-23",
+    "core_research_question": "Can gnosis-indus be migrated into a truthful standalone anchor application and evidence repo without losing the scientific caveats that justify the lane?",
+    "current_focus": "Phase 01 is active: admit source families, freeze authority boundaries, and prepare the first clean extraction target."
+  },
+  "project_contract": {
+    "schema_version": 1,
+    "scope": {
+      "question": "Can gnosis-indus be migrated into a truthful standalone anchor application and evidence repo without losing the scientific caveats that justify the lane?",
+      "in_scope": [
+        "repo-local authority bundle and docs",
+        "minimal starter package and smoke path",
+        "source, data, migration, and export boundaries"
+      ],
+      "out_of_scope": [
+        "decipherment or substrate closure",
+        "standalone gnosis-script-search repo story",
+        "cuneiform or shared-kernel extraction beyond boundary notes"
+      ],
+      "unresolved_questions": [
+        "Which runtime slice should be extracted first?",
+        "Which derived artifacts are safe to vendor before a fetch manifest exists?",
+        "What final release metadata will the owner supply?"
+      ]
+    },
+    "context_intake": {
+      "must_read_refs": [
+        "ref-prd",
+        "ref-agents",
+        "ref-authority",
+        "ref-phase4",
+        "ref-phase5",
+        "ref-paper1-v2"
+      ],
+      "must_include_prior_outputs": [
+        "AUTHORITY_SNAPSHOT.md",
+        "MIGRATION_PLAN.md",
+        "docs/family/INDUS_EXPORT_CONTRACT.md"
+      ],
+      "user_asserted_anchors": [
+        "The top acceptance gate is sovereign.",
+        "Runtime truth and artifact truth outrank prose.",
+        "Keep the non-decipherment posture explicit.",
+        "Keep the Phase 4 caveat visible.",
+        "Treat search as an in-repo application surface."
+      ],
+      "known_good_baselines": [
+        "copied authority docs plus corrected control-plane docs"
+      ],
+      "context_gaps": [
+        "final public license and contact data are owner-deferred"
+      ],
+      "crucial_inputs": [
+        "PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md",
+        "authority/review_pack/phase4_governing_verdict.md",
+        "authority/review_pack/phase5_governing_verdict.md",
+        "authority/papers/paper1_governing_verdict_v2.md"
+      ]
+    },
+    "approach_policy": {
+      "formulations": [
+        "Freeze the boundary before extracting code.",
+        "Treat copied authority docs as the baseline.",
+        "Use fetch surfaces when rights or size block vendoring."
+      ],
+      "allowed_estimator_families": [
+        "docs-first repo extraction",
+        "minimal Python namespace and smoke path",
+        "rights-aware fetch surfaces"
+      ],
+      "forbidden_estimator_families": [
+        "decipherment narrative",
+        "standalone search spinout",
+        "silent rights inflation"
+      ],
+      "allowed_fit_families": [
+        "local authority copies",
+        "explicit caveat preservation",
+        "smoke tests before promotion"
+      ],
+      "forbidden_fit_families": [
+        "threshold drift",
+        "caveat removal",
+        "claim promotion without source path"
+      ],
+      "stop_and_rethink_conditions": [
+        "A cleaner narrative would require hiding the Phase 4 caveat.",
+        "The repo boundary would require splitting search into a fake separate product."
+      ]
+    },
+    "observables": [
+      {
+        "id": "obs-truth-coherence",
+        "name": "truth-surface coherence",
+        "kind": "scalar",
+        "definition": "Whether README, authority snapshot, PRD, and boundary docs agree with the copied verdict surfaces.",
+        "regime": null,
+        "units": "pass/fail"
+      },
+      {
+        "id": "obs-smoke-starter",
+        "name": "starter smoke path",
+        "kind": "scalar",
+        "definition": "Whether the staged package compiles, imports, and retains required authority docs.",
+        "regime": null,
+        "units": "pass/fail"
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-anchor-application",
+        "statement": "The repo preserves the corrected anchor application and evidence posture for the Indus lane.",
+        "observables": [
+          "obs-truth-coherence"
+        ],
+        "deliverables": [
+          "deliv-authority-snapshot",
+          "deliv-source-boundary"
+        ],
+        "acceptance_tests": [
+          "test-front-door-truth",
+          "test-boundary-truth"
+        ],
+        "references": [
+          "ref-prd",
+          "ref-authority",
+          "ref-phase4",
+          "ref-phase5"
+        ]
+      },
+      {
+        "id": "claim-repo-starter",
+        "statement": "The staged repo contains a usable standalone starter surface for later extraction work.",
+        "observables": [
+          "obs-smoke-starter"
+        ],
+        "deliverables": [
+          "deliv-starter-package",
+          "deliv-smoke-tests"
+        ],
+        "acceptance_tests": [
+          "test-starter-import"
+        ],
+        "references": [
+          "ref-prd",
+          "ref-agents"
+        ]
+      }
+    ],
+    "deliverables": [
+      {
+        "id": "deliv-authority-snapshot",
+        "kind": "report",
+        "path": "AUTHORITY_SNAPSHOT.md",
+        "description": "Compact current authority block for the staged repo",
+        "must_contain": [
+          "Phase 4 caveat",
+          "non-decipherment posture",
+          "search boundary"
+        ]
+      },
+      {
+        "id": "deliv-source-boundary",
+        "kind": "report",
+        "path": "SOURCE_BOUNDARY.md",
+        "description": "Repo scope and extraction boundary surface",
+        "must_contain": [
+          "included now",
+          "future extraction targets",
+          "out of scope"
+        ]
+      },
+      {
+        "id": "deliv-starter-package",
+        "kind": "code",
+        "path": "src/gnosis_indus/__init__.py",
+        "description": "Minimal installable package root",
+        "must_contain": [
+          "importable namespace",
+          "version"
+        ]
+      },
+      {
+        "id": "deliv-smoke-tests",
+        "kind": "report",
+        "path": "SMOKE_TESTS.md",
+        "description": "Starter smoke path",
+        "must_contain": [
+          "compile command",
+          "import command",
+          "required file checks"
+        ]
+      }
+    ],
+    "acceptance_tests": [
+      {
+        "id": "test-front-door-truth",
+        "subject": "claim-anchor-application",
+        "kind": "audit",
+        "procedure": "Compare README, AUTHORITY_SNAPSHOT.md, and PRD against the copied authority docs.",
+        "pass_condition": "No promoted claim contradicts the copied authority bundle.",
+        "evidence_required": [
+          "deliv-authority-snapshot"
+        ]
+      },
+      {
+        "id": "test-boundary-truth",
+        "subject": "claim-anchor-application",
+        "kind": "audit",
+        "procedure": "Check SOURCE_BOUNDARY.md and DATA_POLICY.md for search-boundary, caveat, and rights coherence.",
+        "pass_condition": "Search stays in-repo, caveats stay visible, and rights posture is explicit.",
+        "evidence_required": [
+          "deliv-source-boundary"
+        ]
+      },
+      {
+        "id": "test-starter-import",
+        "subject": "claim-repo-starter",
+        "kind": "smoke",
+        "procedure": "Run the starter smoke path defined in SMOKE_TESTS.md.",
+        "pass_condition": "The starter package compiles, imports, and required authority files exist.",
+        "evidence_required": [
+          "deliv-starter-package",
+          "deliv-smoke-tests"
+        ]
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-prd",
+        "kind": "document",
+        "locator": "PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md",
+        "role": "scope"
+      },
+      {
+        "id": "ref-agents",
+        "kind": "document",
+        "locator": "AGENTS.md",
+        "role": "execution_rules"
+      },
+      {
+        "id": "ref-authority",
+        "kind": "document",
+        "locator": "AUTHORITY_SNAPSHOT.md",
+        "role": "authority"
+      },
+      {
+        "id": "ref-phase4",
+        "kind": "document",
+        "locator": "authority/review_pack/phase4_governing_verdict.md",
+        "role": "morphology"
+      },
+      {
+        "id": "ref-phase5",
+        "kind": "document",
+        "locator": "authority/review_pack/phase5_governing_verdict.md",
+        "role": "falsification"
+      },
+      {
+        "id": "ref-paper1-v2",
+        "kind": "document",
+        "locator": "authority/papers/paper1_governing_verdict_v2.md",
+        "role": "paper_authority"
+      }
+    ]
+  },
+  "position": {
+    "current_phase": "01",
+    "current_phase_name": "Source Truth And Authority Admission",
+    "total_phases": 4,
+    "current_plan": "1",
+    "total_plans_in_phase": 1,
+    "status": "READY",
+    "last_activity": "2026-04-23",
+    "last_activity_desc": "Instantiated the workstream pack and specialized the repo-local control plane.",
+    "progress_percent": 30,
+    "paused_at": null
+  },
+  "active_calculations": [],
+  "intermediate_results": [
+    "Authority bundle copied under authority/",
+    "Starter package root created under src/gnosis_indus/",
+    "Boundary docs and export contract written"
+  ],
+  "open_questions": [
+    "Which runtime slice should be extracted first?",
+    "Which derived artifacts are safe to vendor before a fetch manifest exists?",
+    "What final release metadata will the owner supply?"
+  ],
+  "performance_metrics": [
+    {
+      "label": "Scaffold instantiation",
+      "duration": "current session",
+      "tasks": 1,
+      "files": 0
+    }
+  ],
+  "decisions": [
+    {
+      "phase": "00",
+      "summary": "Keep gnosis-indus as an anchor application and evidence repo.",
+      "rationale": "The corrected control plane ranks it as the evidence-bearing anchor."
+    },
+    {
+      "phase": "00",
+      "summary": "Keep search-without-decode inside this repo.",
+      "rationale": "Current evidence supports an application surface, not a sovereign repo."
+    },
+    {
+      "phase": "00",
+      "summary": "Preserve the Phase 4 caveat across front-door docs.",
+      "rationale": "Packaging cannot outrun the copied authority docs."
+    }
+  ],
+  "convention_lock": {
+    "metric_signature": null,
+    "fourier_convention": null,
+    "natural_units": "n/a",
+    "gauge_choice": null,
+    "regularization_scheme": null,
+    "renormalization_scheme": null,
+    "coordinate_system": "not applicable",
+    "spin_basis": null,
+    "state_normalization": null,
+    "coupling_convention": null,
+    "index_positioning": null,
+    "time_ordering": null,
+    "commutation_convention": null,
+    "levi_civita_sign": null,
+    "generator_normalization": null,
+    "covariant_derivative_sign": null,
+    "gamma_matrix_convention": null,
+    "creation_annihilation_order": null,
+    "custom_conventions": {
+      "authority_metric": "truth-surface coherence",
+      "baseline_comparator": "copied authority docs plus corrected control-plane docs",
+      "workspace_root": "the directory that owns this .gpd folder"
+    }
+  },
+  "propagated_uncertainties": [
+    "Final license and public contact are owner-deferred.",
+    "The first extraction slice is not yet chosen."
+  ],
+  "pending_todos": [
+    "Execute Phase 01 Plan 01.",
+    "Choose the first clean extraction target.",
+    "Strengthen the smoke path in Phase 02."
+  ],
+  "blockers": [],
+  "session": {
+    "last_date": "2026-04-23T00:00:00Z",
+    "stopped_at": "Scaffold and control plane completed; Phase 01 ready to open.",
+    "resume_file": ".gpd/phases/01-source-truth-and-authority-admission/01-01-PLAN.md"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "autonomy": "balanced",
+  "research_mode": "adaptive",
+  "parallelization": true,
+  "commit_docs": true,
+  "model_profile": "review",
+  "execution": {
+    "review_cadence": "adaptive",
+    "reporting": "blockers_only",
+    "completion_contract": "all_gates_or_explicit_blocker"
+  },
+  "workflow": {
+    "research": true,
+    "plan_checker": true,
+    "verifier": true
+  }
+}

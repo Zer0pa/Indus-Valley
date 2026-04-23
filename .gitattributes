@@ -1,0 +1,14 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Binary asset hints (shouldn't appear in repo per DATA_POLICY, but
+# declared for safety if ever admitted)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tif binary
+*.tiff binary
+*.pdf binary
+
+# Treat markdown as text; preserve whitespace
+*.md text
