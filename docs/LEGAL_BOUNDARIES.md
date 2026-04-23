@@ -21,6 +21,7 @@ Until then, treat missing legal detail as `OWNER_DEFERRED`.
 | Commercial use | not stated until final license exists | pending owner input |
 | Redistribution | copied markdown docs only; other asset families depend on review | `DATA_POLICY.md` |
 | Novelty or protected scope | no decipherment or broad product-rights claim is made here | `AUTHORITY_SNAPSHOT.md`, `GOVERNANCE.md` |
+| Derived artefacts on HF | artefacts live in private HF repos (`Zer0pa/gnosis-indus-artifacts` and `Zer0pa/gnosis-indus-models`); no public redistribution until rights are cleared per `DATA_POLICY.md` | `DATA_POLICY.md` |
 
 ## Owner Inputs Still Needed
 

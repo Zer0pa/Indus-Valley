@@ -25,6 +25,25 @@ fetch or derived-only surface.
 - Large language corpora used in Phase 5 should be fetched from their upstream
   homes, not mirrored casually into this repo.
 
+### Classification of first-slice artefact families (search-without-decode)
+
+The chosen Phase 02 first slice is the search-without-decode application
+surface (`scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`).
+Its dependent artefact classes are admitted as follows:
+
+| Artefact class | Example | Class | Handling |
+| --- | --- | --- | --- |
+| Derived cluster-ID tables and catalogue JSON required by the query engine | `indus_catalogue.json`, `indus_catalogue_summary.md` | `PUBLIC_LATER` | admit case by case into `artifacts/phase4/`; no image bits, integer IDs and cluster summaries only |
+| Cluster-sequence encodings of inscriptions | `M-1A: [29 5 38 13 32]` style tables | `PUBLIC_LATER` | admit with the cluster-only encoding shown in the Phase 4 Track C demo; never accompanied by source sign imagery |
+| Latency and compression benchmark outputs | query latency tables, 5.89x catalogue compression number | `PUBLIC_NOW` | safe to ship; they are already in the copied `authority/review_pack/search_demo_summary.md` |
+| Raw sign images, ICIT/Wells/Fuls reference plates | any bitmap or vector trace of a sign | `BLOCKED_RIGHTS` | not admitted by the first slice; rights remain unresolved |
+| ICIT reference JSON with image provenance chains | `icit_reference_frozen.json` | `FETCH_EXTERNAL` | referenced by locator only; pulled from its canonical upstream home when needed, not vendored |
+| Phase 5 large language corpora | Sanskrit/Tamil/Prakrit reference corpora | `FETCH_EXTERNAL` | irrelevant to the first slice; remains fetch-only when the third wave lands |
+
+The first slice therefore opens no new rights surface. It publishes only
+derived integer IDs, cluster sequences, and latency/compression numbers
+that the copied Phase 4 Track C authority document already describes.
+
 ## Safe starter contents
 
 - markdown verdicts and authority docs
@@ -36,3 +55,20 @@ fetch or derived-only surface.
 - raw sign-image dumps
 - mirrored large corpora without a rights check
 - unpublished owner-held data or credentials
+
+## Off-repo storage surfaces
+
+Heavy or rights-gated assets never enter this GitHub repo. Approved private
+landing zones for working artefacts are:
+
+| Surface | Locator | Scope | Rights posture |
+| --- | --- | --- | --- |
+| HF dataset repo | `Zer0pa/gnosis-indus-artifacts` (private) | derived Phase 4/5 artefacts, evaluation outputs, intermediate derived JSON | private; no public redistribution until rights are cleared |
+| HF model repo | `Zer0pa/gnosis-indus-models` (private) | model checkpoints produced by runtime extractions | private; weights remain scoped to the lane |
+| RunPod workspace | `/workspace/gnosis-indus-env/repo` on pod `7k3riasglemecu` | ephemeral compute staging for extraction and smoke paths | scratch; anything promoted back to this repo must pass `DATA_POLICY` classification |
+
+`FETCH_EXTERNAL` families are fetched from their canonical upstream homes and
+never mirrored into `Zer0pa/gnosis-indus-artifacts` unless a fetch manifest
+records the provenance and rights decision.
+
+`BLOCKED_RIGHTS` families never land on any of the above surfaces.
