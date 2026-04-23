@@ -54,7 +54,16 @@ Thumbs.db
 
 # Local artefacts and large data (kept off GitHub, lives on HF)
 /data/
-/artifacts/
+# /artifacts/ as a directory cannot be re-included once excluded, so we
+# match its contents (/artifacts/*) and then re-include the small,
+# rights-clean Phase 4 demo-fixture surface. Per DATA_POLICY.md this is
+# derived cluster JSON only (no images, no rights-gated content). The
+# full catalogue stays FETCH_EXTERNAL.
+/artifacts/*
+!/artifacts/phase4/
+/artifacts/phase4/*
+!/artifacts/phase4/indus_catalogue_demo_fixture.json
+!/artifacts/phase4/README.md
 /outputs/
 /cache/
 /.hf_cache/

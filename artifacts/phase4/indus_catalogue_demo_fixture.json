@@ -1,0 +1,67 @@
+{
+  "$source_authority": "authority/review_pack/search_demo_summary.md",
+  "$caveat": "Authority-backed demo fixture for the Phase 4 Track C search-without-decode demo. This is NOT the real full catalogue (412 signs, 70 clusters, 179 inscriptions). The full catalogue is FETCH_EXTERNAL per DATA_POLICY.md. Phase 4 morphology is admitted CONDITIONALLY at k=70 with a stability caveat - see authority/review_pack/phase4_governing_verdict.md.",
+  "$non_decipherment": "Cluster IDs are morphological groupings only. They do NOT encode meaning. Phase 5 (authority/review_pack/phase5_governing_verdict.md) leaves substrate identification indistinguishable.",
+  "k": 70,
+  "n_signs_full": 412,
+  "n_clusters_full": 70,
+  "n_inscriptions_full": 179,
+  "clusters": {
+    "2": {
+      "size": 20,
+      "members": [10, 18, 41, 56, 61, 76, 79, 81, 84, 86, 92, 180, 186, 247, 279, 324, 390, 391, 406, 412],
+      "dominant_set": "set_04",
+      "dominant_graph": "human"
+    },
+    "26": {
+      "size": 5,
+      "members": [17, 26, 50, 317, 351],
+      "dominant_set": "set_04",
+      "dominant_graph": "human"
+    },
+    "38": {
+      "size": 10,
+      "members": [65, 230, 253, 311, 337, 338, 359, 368, 385, 418],
+      "dominant_set": "set_63",
+      "dominant_graph": "U-shape"
+    },
+    "65": {
+      "size": 3,
+      "members": [122, 219, 251],
+      "dominant_set": "set_01",
+      "dominant_graph": "stroke"
+    }
+  },
+  "inscriptions": {
+    "M-1A": {"raw": [121, 202, 385, 73, 108], "cluster": [29, 5, 38, 13, 32]},
+    "M-3A": {"raw": [320, 145, 94], "cluster": [17, 57, 64]},
+    "M-4A": {"raw": [205, 186, 147, 316, 56, 122, 237, 268, 268, 147], "cluster": [4, 2, 15, 40, 2, 65, 44, 39, 39, 15]},
+    "M-5A": {"raw": [324, 96, 62, 60, 120, 256], "cluster": [2, 3, 19, 19, 39, 33]},
+    "M-6A": {"raw": [378, 384, 201, 65], "cluster": [57, 6, 68, 38]},
+    "M-7A": {"raw": [86, 352, 11, 324, 154, 9, 154, 175, 62, 122, 385], "cluster": [2, 19, 36, 2, 35, 10, 35, 69, 19, 65, 38], "label": "unicorn I seal"},
+    "M-8A": {"raw": [316, 11, 270], "cluster": [40, 36, 12]},
+    "M-9A": {"raw": [144, 205, 327], "cluster": [57, 4, 62]}
+  },
+  "inscriptions_partial": {
+    "$note": "These inscriptions appear in query 6/7/8/9/10 result lists in the authority doc with a cluster sequence but no raw sign sequence. Raw is null because the authority doc does not enumerate it. Cluster value -1 means an unmapped token, exactly as the doc renders it.",
+    "M-14A": {"cluster": [2, 3, 3, 65, 38], "label": "unicorn II seal"},
+    "M-15A": {"cluster": [15, 2, 59, 65, 38], "label": "unicorn II seal"},
+    "M-19A": {"cluster": [-1, 65, 38], "label": "unicorn II seal"},
+    "M-20A": {"cluster": [2, 37, 65, 38, 15, 15, 45, 47], "label": "unicorn II seal"},
+    "M-21A": {"cluster": [7, 29, 2, 16, 33, 57, 65, 38], "label": "unicorn II seal"},
+    "M-28A": {"cluster": [-1, 56, 2, 16, 20, -1, 65, 38], "label": "unicorn II seal"},
+    "M-30A": {"cluster": [2, 16, 28, 3, 19, 19, 63], "label": "unicorn II seal"},
+    "M-36A": {"cluster": [2, 16, 12, 26, 57, 65, 5, 40, 44], "label": "unicorn III seal"},
+    "M-38A": {"cluster": [2, 33, 35, 13, 26, 57, 19, 19, 65, 2, 45, 12, 57], "label": "unicorn III seal"},
+    "M-44A": {"cluster": [2, 16, 15, 40, 63, 65, 35, 68], "label": "unicorn III seal"},
+    "M-49A": {"cluster": [-1, 38, 19, 26, 57, 65, 4, 7, 57, 2], "label": "unicorn III seal"},
+    "M-50A": {"cluster": [2, 17, 28, 15, 40, 19, 38, 65, -1], "label": "unicorn III seal"},
+    "M-54A": {"cluster": [3, 19, 15, 40, 38, 65, 57], "label": "unicorn III seal"},
+    "M-64A": {"cluster": [11, 15, 40, 39, 26, 13], "label": "unicorn III seal"},
+    "M-86A": {"cluster": [11, 15, 40, 2, 65, 57, 37], "label": "unicorn IV seal"},
+    "M-91A": {"cluster": [2, 10, 38, 26, 57, 65, 38, 13, -1], "label": "unicorn IV seal"},
+    "M-117A": {"cluster": [11, 15, 40, 26, 63, 57, 65, 57], "label": "unicorn IV seal"},
+    "M-122A": {"cluster": [11, 15, 40], "label": "unicorn IV seal"},
+    "M-135A": {"cluster": [11, 15, 40, 57], "label": "unicorn IV seal"}
+  }
+}
