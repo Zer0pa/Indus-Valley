@@ -207,7 +207,18 @@ The staged repo is incomplete until it contains:
 
 ## 8. Current Promotion Blockers
 
+### 8.1 Currently open
+
 - data-rights and provenance gap for image-bearing release
-- no extracted standalone runtime beyond the starter namespace
-- no clean-machine replay path yet
 - owner-deferred license and public contact details
+
+### 8.2 Closed in Phase 02
+
+- no extracted standalone runtime beyond the starter namespace —
+  closed by `src/gnosis_indus/search_surface/` (clean-room
+  reimplementation anchored to
+  `authority/review_pack/search_demo_summary.md`; see
+  `.gpd/phases/02-extraction-and-minimal-replay-surface/VERIFICATION.md`)
+- no clean-machine replay path yet — closed by
+  `pip install -e .[test] && pytest -q` (14 passed; independently
+  confirmed on RunPod pod from fresh clone)

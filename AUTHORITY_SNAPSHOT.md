@@ -24,7 +24,18 @@ standalone generic search product.
 
 ## Promotion blockers still visible
 
+### Currently open
+
 - image and reference licensing/provenance gaps
-- no extracted standalone runtime beyond the starter namespace
-- no clean-machine replay path beyond the starter smoke test
 - owner-deferred release metadata such as final license and contact
+
+### Closed in Phase 02
+
+- no extracted standalone runtime beyond the starter namespace —
+  closed by `src/gnosis_indus/search_surface/` (clean-room
+  reimplementation anchored to
+  `authority/review_pack/search_demo_summary.md`; see
+  `.gpd/phases/02-extraction-and-minimal-replay-surface/VERIFICATION.md`)
+- no clean-machine replay path beyond the starter smoke test —
+  closed by `pip install -e .[test] && pytest -q` (14 passed;
+  independently confirmed on RunPod pod from fresh clone)
