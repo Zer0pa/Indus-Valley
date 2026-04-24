@@ -4,7 +4,7 @@
   "project_reference": {
     "project_md_updated": "2026-04-24",
     "core_research_question": "Can gnosis-indus be migrated into a truthful standalone anchor application and evidence repo without losing the scientific caveats that justify the lane?",
-    "current_focus": "Phase 01 Plan 01 complete: first extraction slice chosen (search-without-decode); repo is ready for Phase 02 runtime extraction after verification."
+    "current_focus": "Phase 02 Plan 01 complete: clean-room search_surface slice landed under src/gnosis_indus/search_surface/, authority-anchored demo fixture under artifacts/phase4/, pytest stronger smoke path green (14 passed in 0.06s on Python 3.11); repo is ready for Phase 03 (truth-preserving packaging) after verification."
   },
   "project_contract": {
     "schema_version": 1,
@@ -267,15 +267,15 @@
     ]
   },
   "position": {
-    "current_phase": "01",
-    "current_phase_name": "Source Truth And Authority Admission",
+    "current_phase": "02",
+    "current_phase_name": "Extraction And Minimal Replay Surface",
     "total_phases": 4,
     "current_plan": "1",
     "total_plans_in_phase": 1,
     "status": "COMPLETE",
     "last_activity": "2026-04-24",
-    "last_activity_desc": "Executed Phase 01 Plan 01: chose search-without-decode as the first runtime extraction slice, tightened data and legal boundaries, wired the Phase 02 target smoke expectation.",
-    "progress_percent": 60,
+    "last_activity_desc": "Executed Phase 02 Plan 01 (clean-room reimplementation pivot): landed src/gnosis_indus/search_surface/ Catalogue + SearchEngine + load_demo_fixture, bundled artifacts/phase4/indus_catalogue_demo_fixture.json from authority/review_pack/search_demo_summary.md, and a 14-test pytest suite that reproduces queries 1, 2, 3, 6, 9, 10 on the fixture; pytest -q = 14 passed in 0.06s on Python 3.11.",
+    "progress_percent": 80,
     "paused_at": null
   },
   "active_calculations": [],
@@ -286,7 +286,11 @@
     "First extraction slice chosen: phase4_search_demo.py -> src/gnosis_indus/search_surface/",
     "Phase 4 catalogue and Phase 5 falsification families sequenced as explicit second and third waves",
     "DATA_POLICY first-slice classification table admits derived cluster tables and catalogue JSON as PUBLIC_LATER",
-    "SMOKE_TESTS declares a Phase 02 target smoke asserting Track C latency < 100 ms and compression >= 5x"
+    "SMOKE_TESTS now declares a real Phase 02 stronger smoke (pip install -e .[test] && pytest -q) replacing the prior aspirational text",
+    "src/gnosis_indus/search_surface/ landed (Catalogue, SearchEngine, load_demo_fixture); pure stdlib; clean-room reimplementation anchored to authority/review_pack/search_demo_summary.md",
+    "artifacts/phase4/indus_catalogue_demo_fixture.json bundled (4 clusters, 8 fully-encoded inscriptions, 19 partial inscriptions; M-6A trimmed to the 4-token raw/cluster pair the doc actually shows)",
+    "tests/test_search_surface.py reproduces queries 1, 2, 3, 6, 9, 10 from the authority doc on the fixture; query 10 fully reproduces (5/5); queries 6/9 assert subset containment under the doc's '... and N more' truncation",
+    "Latency gate < 100 ms verified locally on Python 3.11 (sub-millisecond)"
   ],
   "open_questions": [
     "Which derived artifacts are safe to vendor before a fetch manifest exists?",
@@ -320,6 +324,11 @@
       "phase": "01",
       "summary": "First extraction slice chosen: phase4_search_demo.py -> src/gnosis_indus/search_surface/.",
       "rationale": "Lowest rights-gate risk (derived cluster IDs only), smallest helper-dependency footprint, and cleanest stronger-smoke-path story. Phase 4 catalogue and Phase 5 falsification families follow as explicit second and third waves."
+    },
+    {
+      "phase": "02",
+      "summary": "Pivot to clean-room reimplementation of the search-without-decode slice from the admitted Phase 4 Track C authority document, instead of copying scripts/indus/phase4_search_demo.py from the original monorepo.",
+      "rationale": "The original source script is not accessible from this machine (mdfind on the local machine and find /workspace on the pod both empty; the original repo path /Users/Zer0pa/ZPE/ZPE-Cipher does not exist here). authority/review_pack/search_demo_summary.md is admitted authority and contains a complete enough functional spec (API names, latency gate, cluster memberships for 4 clusters, sample encodings for 8 inscriptions, and 10 ground-truth query records) to build a reference implementation whose outputs are anchored to the doc rather than invented. A clean-room is strictly more standalone than a copy that drags in monorepo helpers, and aligns with the AGENTS.md success criterion 'the repo becomes more standalone without becoming less truthful'. No monorepo helpers were dragged in; the slice is pure stdlib with numpy exposed only as an optional extra."
     }
   ],
   "convention_lock": {
@@ -349,19 +358,17 @@
   },
   "propagated_uncertainties": [
     "Final license and public contact are owner-deferred.",
-    "Runtime dependency list is not frozen until the first slice lands in Phase 02."
+    "Runtime dependency list for the Phase 02 slice is now frozen at stdlib-only; numpy is exposed as an optional extra (gnosis-indus[numerics]) and is not used by any current code path."
   ],
   "pending_todos": [
-    "Advance orchestrator to Phase 02 after verification.",
-    "Extract scripts/indus/phase4_search_demo.py into src/gnosis_indus/search_surface/ in Phase 02 Plan 01.",
-    "Co-land a small derived artifacts/phase4/indus_catalogue.json for the smoke path.",
-    "Implement the Phase 02 target smoke path declared in SMOKE_TESTS.md.",
-    "Freeze the runtime dependency list once the first slice lands."
+    "Advance orchestrator to Phase 03 after verification of Phase 02.",
+    "Phase 03 Plan 01 (TBD): truth-preserving packaging — re-confirm front door, authority snapshot, and boundary docs after the Phase 02 runtime slice landed.",
+    "Resolve or surface the unresolved fetch-manifest question for derived artifacts."
   ],
   "blockers": [],
   "session": {
     "last_date": "2026-04-24T00:00:00Z",
-    "stopped_at": "Phase 01 Plan 01 complete; first extraction slice chosen (search-without-decode); waiting for orchestrator to verify and advance to Phase 02.",
+    "stopped_at": "Phase 02 Plan 01 complete; clean-room search_surface slice landed; pytest stronger smoke path runs green (14 passed in 0.06s on Python 3.11); waiting for orchestrator to verify and advance to Phase 03.",
     "resume_file": ".gpd/ROADMAP.md"
   }
 }

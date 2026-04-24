@@ -17,7 +17,7 @@ until the active gate is closed or honestly blocked.
       surfaces and starter package.
 - [x] **Phase 01: Source Truth And Authority Admission** - Freeze authority,
       source, and data boundaries before runtime extraction.
-- [ ] **Phase 02: Extraction And Minimal Replay Surface** - Land the first
+- [x] **Phase 02: Extraction And Minimal Replay Surface** - Land the first
       clean runtime slice and a stronger smoke path.
 - [ ] **Phase 03: Truth-Preserving Packaging** - Package only the surfaces that
       stay honest under the admitted evidence.
@@ -71,7 +71,7 @@ Plans:
 
 Plans:
 
-- [ ] **02-01**: Extract the first clean runtime slice — search-without-decode application surface (`scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`) plus the Phase 02 target smoke path declared in `SMOKE_TESTS.md`.
+- [x] **02-01**: Extract the first clean runtime slice — search-without-decode application surface (clean-room reimplementation under `src/gnosis_indus/search_surface/`, anchored to `authority/review_pack/search_demo_summary.md`) plus the Phase 02 stronger smoke path now wired into `SMOKE_TESTS.md` and `tests/test_search_surface.py` (completed 2026-04-24).
 
 ### Phase 03: Truth-Preserving Packaging
 
@@ -95,5 +95,5 @@ Plans:
 | ----- | -------------- | ------ | --------- |
 | 00. Workstream Bootstrap | 1/1 | Complete | 2026-04-23 |
 | 01. Source Truth And Authority Admission | 1/1 | Complete | 2026-04-24 |
-| 02. Extraction And Minimal Replay Surface | 0/1 | Pending | - |
+| 02. Extraction And Minimal Replay Surface | 1/1 | Complete | 2026-04-24 |
 | 03. Truth-Preserving Packaging | 0/TBD | Pending | - |

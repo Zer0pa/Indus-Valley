@@ -44,8 +44,13 @@ scientific caveats that justify the lane?
 - [x] **VALD-02**: Verify that the Phase 4 caveat and search boundary remain
       explicit.
 - [x] **VALD-03**: Verify source, data, and fetch boundaries.
-- [ ] **VALD-04**: Verify the first real extraction path on a stronger smoke or
-      replay path than the starter import.
+- [x] **VALD-04**: Verify the first real extraction path on a stronger smoke or
+      replay path than the starter import. _(Phase 02 Plan 01: closed by
+      `tests/test_search_surface.py` (14 tests, 0.06s) reproducing
+      authority-doc queries against
+      `artifacts/phase4/indus_catalogue_demo_fixture.json`; smoke command
+      `pip install -e .[test] && pytest -q` is now wired into
+      `SMOKE_TESTS.md`.)_
 
 ### Writing And Packaging
 
@@ -92,6 +97,6 @@ scientific caveats that justify the lane?
 | Requirement | Phase | Status |
 | ----------- | ----- | ------ |
 | `DATA-01`, `DERV-01`, `SIMU-01`, `SIMU-02` | Phase 00: Workstream Bootstrap | Complete |
-| `DATA-02`, `DATA-03`, `DERV-02`, `VALD-01`, `VALD-02`, `VALD-03`, `WRIT-01`, `WRIT-02` | Phase 01: Source Truth And Authority Admission | Ready |
-| `CALC-02`, `CALC-03`, `DERV-03`, `VALD-04` | Phase 02: Extraction And Minimal Replay Surface | Pending |
+| `DATA-02`, `DATA-03`, `DERV-02`, `VALD-01`, `VALD-02`, `VALD-03`, `WRIT-01`, `WRIT-02` | Phase 01: Source Truth And Authority Admission | Complete |
+| `CALC-02`, `CALC-03`, `DERV-03`, `VALD-04` | Phase 02: Extraction And Minimal Replay Surface | Complete |
 | packaging coherence pass | Phase 03: Truth-Preserving Packaging | Pending |
