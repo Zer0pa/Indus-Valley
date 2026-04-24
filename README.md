@@ -46,6 +46,25 @@ erasing the earlier caution.
 - We do not claim unrestricted public redistribution rights for every
   image-bearing or corpus-bearing source used in the original monorepo.
 
+## Replay
+
+Reproduce the Phase 02 stronger smoke path on any clean Python 3.11 host:
+
+    git clone https://github.com/Zer0pa/Indus-Valley.git gnosis-indus
+    cd gnosis-indus
+    python -m venv .venv && source .venv/bin/activate
+    pip install -e ".[test]"
+    pytest -q
+
+Expected: `14 passed`. The pytest suite reproduces the
+authority-doc query records from
+`authority/review_pack/search_demo_summary.md` against the bundled
+`artifacts/phase4/indus_catalogue_demo_fixture.json`. The fixture is
+small and authority-anchored; the real full catalogue (412 signs, 70
+clusters, 179 inscriptions) stays `FETCH_EXTERNAL` per
+`DATA_POLICY.md`. The Phase 4 stability caveat (k=70 conditional)
+remains visible in the package and fixture surfaces.
+
 ## Read Next
 
 | Need | File |
@@ -60,5 +79,10 @@ erasing the earlier caution.
 
 ## Current Gaps
 
-- The first extracted runtime slice has not yet landed under `src/gnosis_indus/`.
-- Rights-aware fetch surfaces for images and corpora still need to be frozen.
+- Image-rights and provenance for any public image-bearing release remain
+  unresolved; sign images stay `BLOCKED_RIGHTS` in `DATA_POLICY.md`.
+- Final license text and public contact are owner-deferred
+  (`OWNER_DEFERRED` in `LICENSE_PLACEHOLDER.md` and `docs/LEGAL_BOUNDARIES.md`).
+- Phase 02 landed only the search-without-decode slice. The Phase 4
+  catalogue and Phase 5 falsification slices are sequenced as later
+  extraction waves (`MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`).
