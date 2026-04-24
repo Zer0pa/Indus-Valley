@@ -2,11 +2,21 @@
 
 ## Next extraction work
 
+### Done in Phase 02
+
+- defined the in-repo search application package under
+  `src/gnosis_indus/search_surface/` (clean-room reimplementation
+  anchored to `authority/review_pack/search_demo_summary.md`)
+- built a stronger smoke path than the starter import check
+  (`tests/test_search_surface.py`, `pip install -e .[test] && pytest -q`,
+  14 passed; independently confirmed on a clean RunPod pod from a
+  fresh clone)
+
+### Still open
+
 - extract the first clean Phase 4 runtime slice into `src/gnosis_indus/catalogue/`
 - extract the first clean Phase 5 runtime slice into `src/gnosis_indus/falsification/`
-- define the in-repo search application package under `src/gnosis_indus/search_surface/`
 - add fetch manifests for image and corpus families that cannot ship now
-- build a stronger smoke path than the starter import check
 
 ## Documentation follow-ups
 
