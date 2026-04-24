@@ -4,7 +4,7 @@
   "project_reference": {
     "project_md_updated": "2026-04-24",
     "core_research_question": "Can gnosis-indus be migrated into a truthful standalone anchor application and evidence repo without losing the scientific caveats that justify the lane?",
-    "current_focus": "Phase 02 Plan 01 complete: clean-room search_surface slice landed under src/gnosis_indus/search_surface/, authority-anchored demo fixture under artifacts/phase4/, pytest stronger smoke path green (14 passed in 0.06s on Python 3.11); repo is ready for Phase 03 (truth-preserving packaging) after verification."
+    "current_focus": "Phase 03 Plan 01 complete: PRD closed end-to-end. Front door (README), authority snapshot, PRD §8, TODO, and init checklist all agree with the post-Phase-02 reality. Two of four PRD §8 blockers closed (extracted runtime, clean-machine replay); two remain owner-bound and visible (image rights, owner-deferred license/contact). Staged scaffold is promotion-ready up to its admitted limits."
   },
   "project_contract": {
     "schema_version": 1,
@@ -21,7 +21,6 @@
         "cuneiform or shared-kernel extraction beyond boundary notes"
       ],
       "unresolved_questions": [
-        "Which derived artifacts are safe to vendor before a fetch manifest exists?",
         "What final release metadata will the owner supply?"
       ]
     },
@@ -267,15 +266,15 @@
     ]
   },
   "position": {
-    "current_phase": "02",
-    "current_phase_name": "Extraction And Minimal Replay Surface",
+    "current_phase": "03",
+    "current_phase_name": "Truth-Preserving Packaging",
     "total_phases": 4,
     "current_plan": "1",
     "total_plans_in_phase": 1,
     "status": "COMPLETE",
     "last_activity": "2026-04-24",
-    "last_activity_desc": "Executed Phase 02 Plan 01 (clean-room reimplementation pivot): landed src/gnosis_indus/search_surface/ Catalogue + SearchEngine + load_demo_fixture, bundled artifacts/phase4/indus_catalogue_demo_fixture.json from authority/review_pack/search_demo_summary.md, and a 14-test pytest suite that reproduces queries 1, 2, 3, 6, 9, 10 on the fixture; pytest -q = 14 passed in 0.06s on Python 3.11.",
-    "progress_percent": 80,
+    "last_activity_desc": "Executed Phase 03 Plan 01 (truth-preserving packaging): brought README, AUTHORITY_SNAPSHOT, PRD §8, TODO, and WORKSTREAM_GPD_INIT_CHECKLIST into agreement with the post-Phase-02 reality. Split PRD §8 promotion blockers into 'Currently open' (image rights, owner-deferred license/contact) and 'Closed in Phase 02' (extracted runtime → src/gnosis_indus/search_surface/; clean-machine replay → pip install -e .[test] && pytest -q, 14 passed). Re-ran pytest = 14 passed; compileall src clean; PRD §1.3 falsification battery clean.",
+    "progress_percent": 100,
     "paused_at": null
   },
   "active_calculations": [],
@@ -293,7 +292,6 @@
     "Latency gate < 100 ms verified locally on Python 3.11 (sub-millisecond)"
   ],
   "open_questions": [
-    "Which derived artifacts are safe to vendor before a fetch manifest exists?",
     "What final release metadata will the owner supply?"
   ],
   "performance_metrics": [
@@ -361,14 +359,15 @@
     "Runtime dependency list for the Phase 02 slice is now frozen at stdlib-only; numpy is exposed as an optional extra (gnosis-indus[numerics]) and is not used by any current code path."
   ],
   "pending_todos": [
-    "Advance orchestrator to Phase 03 after verification of Phase 02.",
-    "Phase 03 Plan 01 (TBD): truth-preserving packaging — re-confirm front door, authority snapshot, and boundary docs after the Phase 02 runtime slice landed.",
-    "Resolve or surface the unresolved fetch-manifest question for derived artifacts."
+    "Out-of-PRD next wave: extract first clean Phase 4 runtime slice into src/gnosis_indus/catalogue/ (per MIGRATION_PLAN.md, SOURCE_BOUNDARY.md).",
+    "Out-of-PRD next wave: extract first clean Phase 5 runtime slice into src/gnosis_indus/falsification/ (per MIGRATION_PLAN.md).",
+    "Out-of-PRD next wave: add fetch manifests for image and full-catalogue families (DATA_POLICY.md; image rights remain owner-bound).",
+    "Owner-bound: replace OWNER_DEFERRED license text and public contact (LICENSE_PLACEHOLDER.md, docs/LEGAL_BOUNDARIES.md)."
   ],
   "blockers": [],
   "session": {
     "last_date": "2026-04-24T00:00:00Z",
-    "stopped_at": "Phase 02 Plan 01 complete; clean-room search_surface slice landed; pytest stronger smoke path runs green (14 passed in 0.06s on Python 3.11); waiting for orchestrator to verify and advance to Phase 03.",
-    "resume_file": ".gpd/ROADMAP.md"
+    "stopped_at": "PRD complete; staged scaffold is promotion-ready up to its admitted limits (two PRD §8 blockers closed by Phase 02; two remain owner-bound and visible in AUTHORITY_SNAPSHOT.md and PRD §8).",
+    "resume_file": "PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md"
   }
 }

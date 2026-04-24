@@ -86,7 +86,6 @@ declared falsification battery?
 
 ### Open Contract Questions
 
-- Which derived JSON artifacts are safe to vendor before a fetch plan exists?
 - What public license and contact surface will eventually govern the repo?
 
 _(Resolved in Phase 01 Plan 01: the first runtime slice under
@@ -94,6 +93,13 @@ _(Resolved in Phase 01 Plan 01: the first runtime slice under
 i.e. `scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`.
 See `SOURCE_BOUNDARY.md` and `MIGRATION_PLAN.md` for the justification and
 execution order.)_
+
+_(Resolved in Phase 02 Plan 01: derived integer-only cluster sequences
+that reproduce authority-doc query records are safe to vendor as the
+authority-anchored demo fixture
+`artifacts/phase4/indus_catalogue_demo_fixture.json`. Image families
+and the full 412/70/179 catalogue stay `BLOCKED_RIGHTS` /
+`FETCH_EXTERNAL` per `DATA_POLICY.md`.)_
 
 ## Research Questions
 
@@ -106,12 +112,25 @@ execution order.)_
       (`scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`).
       Phase 4 catalogue and Phase 5 falsification families are sequenced
       as the second and third waves.
+- [x] Which assets stay fetch-only because of size or rights? Per
+      `DATA_POLICY.md` first-slice classification: raw sign images are
+      `BLOCKED_RIGHTS`; the full 412-sign / 70-cluster / 179-inscription
+      catalogue and ICIT reference JSON are `FETCH_EXTERNAL`; derived
+      cluster tables and the demo fixture are `PUBLIC_LATER`; latency
+      and compression numbers are `PUBLIC_NOW`.
+- [x] What is the minimal truthful smoke path beyond starter import?
+      `pip install -e .[test] && pytest -q` (14 passed) — reproduces
+      authority-doc query records from
+      `authority/review_pack/search_demo_summary.md` against the bundled
+      authority-anchored demo fixture; gates `sequence_search` latency
+      at < 100 ms; independently confirmed on a clean RunPod pod from a
+      fresh `git clone`.
 
 ### Active
 
-- [ ] Which assets stay fetch-only because of size or rights?
-- [ ] What is the minimal truthful smoke path beyond starter import?
-      _(Target shape declared in `SMOKE_TESTS.md`; becomes real in Phase 02.)_
+_(All Active questions are answered. Remaining open question is
+"What public license and contact surface will eventually govern the
+repo?" under Open Contract Questions; it is owner-deferred.)_
 
 ### Out Of Scope
 

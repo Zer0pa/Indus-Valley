@@ -19,7 +19,7 @@ until the active gate is closed or honestly blocked.
       source, and data boundaries before runtime extraction.
 - [x] **Phase 02: Extraction And Minimal Replay Surface** - Land the first
       clean runtime slice and a stronger smoke path.
-- [ ] **Phase 03: Truth-Preserving Packaging** - Package only the surfaces that
+- [x] **Phase 03: Truth-Preserving Packaging** - Package only the surfaces that
       stay honest under the admitted evidence.
 
 ## Phase Details
@@ -87,7 +87,9 @@ evidence and runtime state.
 
 Plans:
 
-- [ ] **03-01**: [TBD]
+- [x] **03-01**: Truth-preserving packaging — front door, authority
+      snapshot, PRD §8, and TODO brought into agreement with Phase 02
+      reality (completed 2026-04-24)
 
 ## Progress
 
@@ -96,4 +98,4 @@ Plans:
 | 00. Workstream Bootstrap | 1/1 | Complete | 2026-04-23 |
 | 01. Source Truth And Authority Admission | 1/1 | Complete | 2026-04-24 |
 | 02. Extraction And Minimal Replay Surface | 1/1 | Complete | 2026-04-24 |
-| 03. Truth-Preserving Packaging | 0/TBD | Pending | - |
+| 03. Truth-Preserving Packaging | 1/1 | Complete | 2026-04-24 |

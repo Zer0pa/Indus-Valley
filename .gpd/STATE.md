@@ -7,43 +7,45 @@ See: `.gpd/PROJECT.md`
 **Core research or build question:** Can `gnosis-indus` be migrated into a
 truthful standalone anchor application and evidence repo without losing the
 scientific caveats that justify the lane?
-**Current focus:** Phase 02 Plan 01 is complete. The first clean runtime
-slice (`src/gnosis_indus/search_surface/`) is landed as a clean-room
-reimplementation anchored to the admitted Phase 4 Track C authority doc,
-and a stronger smoke path (pytest suite reproducing authority-doc
-queries on a small authority-anchored demo fixture) runs green locally.
-The repo is ready for Phase 03 (truth-preserving packaging).
+**Current focus:** Phase 03 Plan 01 is complete. The PRD is now closed
+end-to-end: front door (`README.md`), authority snapshot
+(`AUTHORITY_SNAPSHOT.md`), PRD §8, TODO, and init checklist all
+agree with the post-Phase-02 reality. Two of four PRD §8 promotion
+blockers are closed (extracted runtime, clean-machine replay) and
+two remain owner-bound and visible (image rights, owner-deferred
+license/contact). The staged scaffold is promotion-ready up to its
+admitted limits.
 
 ## Current Position
 
-**Current Phase:** `02`
-**Current Phase Name:** Extraction And Minimal Replay Surface
+**Current Phase:** `03`
+**Current Phase Name:** Truth-Preserving Packaging
 **Total Phases:** `4`
 **Current Plan:** `1`
 **Total Plans In Phase:** `1`
 **Status:** `COMPLETE`
-**Status Detail:** Phase 02 Plan 01 executed end-to-end as a clean-room
-reimplementation pivot (original `scripts/indus/phase4_search_demo.py`
-was inaccessible from this machine; clean-room from the admitted
-authority doc was the well-grounded alternative). Landed
-`src/gnosis_indus/search_surface/` (Catalogue, SearchEngine,
-load_demo_fixture), bundled
-`artifacts/phase4/indus_catalogue_demo_fixture.json` strictly from
-data enumerated in `authority/review_pack/search_demo_summary.md`,
-and a 14-test pytest suite (`tests/test_search_surface.py`) that
-reproduces queries 1, 2, 3, 6, 9, 10 on the fixture and gates
-sequence_search latency at < 100 ms. The orchestrator may advance to
-Phase 03 after verification.
+**Status Detail:** Phase 03 Plan 01 closed the truth-surface coherence
+audit. README "Current Gaps" + new "Replay" section reflect the
+landed search_surface slice and the real `pip install -e .[test]
+&& pytest -q` (14 passed) command. `AUTHORITY_SNAPSHOT.md`
+"Promotion blockers still visible" and PRD §8 split into
+"Currently open" (2 items: image rights, owner-deferred license/
+contact) and "Closed in Phase 02" (2 items: extracted standalone
+runtime → `src/gnosis_indus/search_surface/`; clean-machine replay
+→ pytest suite confirmed on RunPod from fresh clone). TODO and
+WORKSTREAM_GPD_INIT_CHECKLIST.md updated. No PRD §1.3 falsification
+condition triggered. All ten PRD §7 artifact contract files exist
+and are non-empty.
 **Last Activity:** `2026-04-24`
-**Last Activity Description:** executed Phase 02 Plan 01 — built the
-Phase 4 Track C demo fixture, the clean-room search_surface package,
-and the pytest stronger smoke path; locally verified `pytest -q` =
-14 passed in 0.06s on Python 3.11.
+**Last Activity Description:** executed Phase 03 Plan 01 — front
+door, authority snapshot, PRD §8, TODO, and init checklist brought
+into agreement with the post-Phase-02 reality; pytest re-run = 14
+passed; `python -m compileall src` clean.
 
 **Execution Doctrine:** no interim reporting unless there is a real blocker
 that cannot be removed locally or on admitted surfaces.
 
-**Progress:** [########--] `80%`
+**Progress:** [##########] `100%`
 
 ## Active Calculations
 
@@ -83,8 +85,16 @@ that cannot be removed locally or on admitted surfaces.
 
 ## Open Questions
 
-- Which derived artifacts are safe to vendor before a fetch manifest exists?
-- What final release metadata will the owner supply?
+- What final release metadata will the owner supply? (license text and
+  public contact remain `OWNER_DEFERRED`.)
+
+_(Resolved: "Which derived artifacts are safe to vendor before a fetch
+manifest exists?" — answered by Phase 02. The bundled
+`artifacts/phase4/indus_catalogue_demo_fixture.json` is rights-clean
+(integer sign IDs and derived cluster sequences only, anchored to
+`authority/review_pack/search_demo_summary.md`). Image families and
+the full 412-sign / 70-cluster / 179-inscription catalogue stay
+`BLOCKED_RIGHTS` / `FETCH_EXTERNAL` per `DATA_POLICY.md`.)_
 
 ## Performance Metrics
 
@@ -134,11 +144,18 @@ that cannot be removed locally or on admitted surfaces.
 
 ### Pending Todos
 
-- advance orchestrator to Phase 03 after verification of Phase 02
-- Phase 03 Plan 01 (TBD): truth-preserving packaging — confirm front
-  door, authority snapshot, and boundary docs still agree after the
-  Phase 02 runtime slice landed; resolve or surface the unresolved
-  fetch-manifest question for derived artifacts
+This PRD is complete. The following are recorded for continuity, but
+they are explicitly out of scope for this PRD; they belong to later
+extraction waves outside the current contract:
+
+- extract the first clean Phase 4 runtime slice into
+  `src/gnosis_indus/catalogue/` (next wave; `MIGRATION_PLAN.md`,
+  `SOURCE_BOUNDARY.md`)
+- extract the first clean Phase 5 runtime slice into
+  `src/gnosis_indus/falsification/` (next wave; `MIGRATION_PLAN.md`)
+- add fetch manifests for the image and full-catalogue families that
+  cannot ship now (`DATA_POLICY.md`, owner-bound for image rights)
+- replace `OWNER_DEFERRED` license text and public contact (owner-bound)
 
 ### Blockers/Concerns
 
@@ -151,8 +168,7 @@ that cannot be removed locally or on admitted surfaces.
 ## Session Continuity
 
 **Last session:** `2026-04-24T00:00:00Z`
-**Stopped at:** Phase 02 Plan 01 complete; clean-room search_surface
-slice landed; pytest-based stronger smoke path runs green
-(14 passed in 0.06s on Python 3.11); waiting for orchestrator to
-verify and advance to Phase 03.
-**Resume file:** `.gpd/ROADMAP.md` (Phase 03 row)
+**Stopped at:** PRD complete; staged scaffold is promotion-ready up
+to its admitted limits (two PRD §8 blockers closed by Phase 02; two
+remain owner-bound and visible in `AUTHORITY_SNAPSHOT.md` and PRD §8).
+**Resume file:** `PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md`
