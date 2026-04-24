@@ -25,11 +25,11 @@ fetch or derived-only surface.
 - Large language corpora used in Phase 5 should be fetched from their upstream
   homes, not mirrored casually into this repo.
 
-### Classification of first-slice artefact families (search-without-decode)
+### Classification of first-slice artifact families (search-without-decode)
 
 The chosen Phase 02 first slice is the search-without-decode application
 surface (`scripts/indus/phase4_search_demo.py` → `src/gnosis_indus/search_surface/`).
-Its dependent artefact classes are admitted as follows:
+Its dependent artifact classes are admitted as follows:
 
 | Artefact class | Example | Class | Handling |
 | --- | --- | --- | --- |
@@ -59,13 +59,13 @@ that the copied Phase 4 Track C authority document already describes.
 ## Off-repo storage surfaces
 
 Heavy or rights-gated assets never enter this GitHub repo. Approved private
-landing zones for working artefacts are:
+landing zones for working artifacts are:
 
 | Surface | Locator | Scope | Rights posture |
 | --- | --- | --- | --- |
-| HF dataset repo | `Zer0pa/gnosis-indus-artifacts` (private) | derived Phase 4/5 artefacts, evaluation outputs, intermediate derived JSON | private; no public redistribution until rights are cleared |
+| HF dataset repo | `Zer0pa/gnosis-indus-artifacts` (private) | derived Phase 4/5 artifacts, evaluation outputs, intermediate derived JSON | private; no public redistribution until rights are cleared |
 | HF model repo | `Zer0pa/gnosis-indus-models` (private) | model checkpoints produced by runtime extractions | private; weights remain scoped to the lane |
-| RunPod workspace | `/workspace/gnosis-indus-env/repo` on pod `7k3riasglemecu` | ephemeral compute staging for extraction and smoke paths | scratch; anything promoted back to this repo must pass `DATA_POLICY` classification |
+| RunPod workspace | `/workspace/gnosis-indus-env/repo` on pod `<RUNPOD_POD>` | ephemeral compute staging for extraction and smoke paths | scratch; anything promoted back to this repo must pass `DATA_POLICY` classification |
 
 `FETCH_EXTERNAL` families are fetched from their canonical upstream homes and
 never mirrored into `Zer0pa/gnosis-indus-artifacts` unless a fetch manifest

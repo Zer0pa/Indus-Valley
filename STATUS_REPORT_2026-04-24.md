@@ -62,7 +62,7 @@ Outcome:
   `PUBLIC_NOW`, ICIT reference JSON as `FETCH_EXTERNAL`, raw sign images
   as `BLOCKED_RIGHTS`.
 - Off-repo storage surfaces declared (private HF dataset + model repos
-  under `Zer0pa/` org) so heavy or rights-gated artefacts never land in
+  under `Zer0pa/` org) so heavy or rights-gated artifacts never land in
   GitHub.
 
 ### Phase 02 — Extraction And Minimal Replay Surface
@@ -96,7 +96,7 @@ Outcome:
 - `SMOKE_TESTS.md` updated with the real replay command
   (`pip install -e .[test] && pytest -q`).
 - **Independent-machine reproducibility confirmed on RunPod pod
-  `7k3riasglemecu`** after `git pull` + `uv pip install -e .[test]`:
+  `<RUNPOD_POD>`** after `git pull` + `uv pip install -e .[test]`:
   `14 passed in 0.29s`.
 
 ### Phase 03 — Truth-Preserving Packaging
@@ -129,7 +129,7 @@ The plan called for literal extraction of
 `scripts/indus/phase4_search_demo.py` from the original source tree. A
 systematic search (local Spotlight `mdfind`, RunPod `/workspace`
 traversal) established that the source repo
-(`/Users/Zer0pa/ZPE/ZPE-Cipher`, per
+(`<MONOREPO_ROOT>`, per
 `../HANDOVER_NEXT_GNOSIS_ORCHESTRATOR_2026-04-23.md`) is not accessible
 from this machine or from the pod.
 
@@ -205,9 +205,9 @@ time:
   currently `INTERNAL` visibility.
 - **HF (private):** `Zer0pa/gnosis-indus-artifacts` (dataset),
   `Zer0pa/gnosis-indus-models` (model). Landing zones for heavy/derived
-  artefacts. Nothing uploaded yet — there is nothing safe to upload
+  artifacts. Nothing uploaded yet — there is nothing safe to upload
   beyond what is already in the repo.
-- **RunPod:** `/workspace/gnosis-indus-env/repo` on pod `7k3riasglemecu`.
+- **RunPod:** `/workspace/gnosis-indus-env/repo` on pod `<RUNPOD_POD>`.
   Python 3.11.15 via `uv`. `.venv` pre-installed with `.[test]`.
   `git pull && pytest -q` reproduces on demand.
 - **Tokens:** GitHub PAT (scopes: repo, workflow, read:org) and HF

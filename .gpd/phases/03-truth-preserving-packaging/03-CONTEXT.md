@@ -13,7 +13,7 @@ RunPod from a fresh clone). Surface remaining promotion blockers honestly.
 | --- | --- | --- |
 | First extracted runtime slice | not landed | `src/gnosis_indus/search_surface/` landed (clean-room from authority doc) |
 | Stronger smoke path | aspirational only | real: `pip install -e .[test] && pytest -q` (14 passed) |
-| Clean-machine replay | not demonstrated | demonstrated on RunPod pod `7k3riasglemecu` from a fresh `git pull` |
+| Clean-machine replay | not demonstrated | demonstrated on RunPod pod `<RUNPOD_POD>` from a fresh `git pull` |
 | Demo fixture | not present | `artifacts/phase4/indus_catalogue_demo_fixture.json` (rights-clean, authority-anchored) |
 | Off-repo storage surfaces | undeclared | `Zer0pa/gnosis-indus-artifacts` (HF dataset) and `Zer0pa/gnosis-indus-models` (HF model) provisioned private |
 

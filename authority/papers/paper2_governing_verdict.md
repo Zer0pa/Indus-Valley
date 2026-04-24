@@ -23,7 +23,7 @@ Paper 2 outline, figure plan, and target-venue analysis are ready. Paper 2 **sho
 | `target_journal_analysis.md` | Complete | PLoS ONE primary, *Computational Linguistics* secondary, JQL tertiary |
 | `governing_verdict.md` | This file | Terse verdict + forward guidance |
 
-All files under `/Users/Zer0pa/ZPE/ZPE-Cipher/workspace/papers/paper2/`.
+All files under `<MONOREPO_ROOT>/workspace/papers/paper2/`.
 
 ---
 
@@ -81,7 +81,7 @@ If pressed to parallel-draft, the minimum acceptable mitigation is:
 - [x] No substrate identification as proven — verified §4.3, §11.
 - [x] Honest framing — outline is about indistinguishability AND ranking flip, not about identifying a substrate.
 - [x] Evidence on disk mandatory — every claim anchored to a Phase 5 or Phase 6A artifact.
-- [x] LaTeX/outline path: `/Users/Zer0pa/ZPE/ZPE-Cipher/workspace/papers/paper2/`.
+- [x] LaTeX/outline path: `<MONOREPO_ROOT>/workspace/papers/paper2/`.
 - [x] No duplication of Paper 1 §§3–5 — Paper 2 cites Paper 1, does not rehash morphological bottleneck.
 - [x] No interim reporting — WP-C1 is a single-deliverable work package; no mid-work status emitted.
 - [x] No narrative wins — outline explicitly frames Paper 2 as retiring the project's own earlier headline claim.

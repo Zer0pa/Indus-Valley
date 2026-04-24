@@ -38,7 +38,7 @@ If one fails and another survives, we've narrowed the language question computat
 
 ### Track 1: Environment Setup (RunPod)
 - SSH to RunPod, set up Python environment
-- Clone/sync ZPE-Cipher repo
+- Clone/sync monorepo (see `PRIVATE_PROVENANCE_APPENDIX.md` for the source root)
 - Download required models and datasets
 - Verify disk space and compute capacity
 

@@ -10,7 +10,7 @@
 
 ## Verdict: `DRAFT_V1_ON_DISK — READY_FOR_WP-B3_REFEREE_REVIEW`
 
-All deliverables are on disk under `/Users/Zer0pa/ZPE/ZPE-Cipher/workspace/papers/paper1/`. The paper's central contribution is upgraded from a single-instance morphological reference bottleneck to a **dual-instance pattern** (morphological + statistical). The k=100 catalogue is the governing anchor. The airtight H1 refutation (WP-A3 + WP-A3b) is the statistical-instance evidence. The 10K lipi permutation result (WP-A4) tightens the Popperian control.
+All deliverables are on disk under `<MONOREPO_ROOT>/workspace/papers/paper1/`. The paper's central contribution is upgraded from a single-instance morphological reference bottleneck to a **dual-instance pattern** (morphological + statistical). The k=100 catalogue is the governing anchor. The airtight H1 refutation (WP-A3 + WP-A3b) is the statistical-instance evidence. The 10K lipi permutation result (WP-A4) tightens the Popperian control.
 
 ---
 
@@ -58,7 +58,7 @@ All deliverables are on disk under `/Users/Zer0pa/ZPE/ZPE-Cipher/workspace/paper
 LaTeX not installed on the local harness (`pdflatex` / `xelatex` / `latexmk` absent). Compile command is documented in the LaTeX header comment; reviewers with a standard TeX Live install can produce PDF via:
 
 ```
-cd /Users/Zer0pa/ZPE/ZPE-Cipher/workspace/papers/paper1
+cd <MONOREPO_ROOT>/workspace/papers/paper1
 pdflatex paper1_reference_bottleneck_v1.tex
 bibtex   paper1_reference_bottleneck_v1
 pdflatex paper1_reference_bottleneck_v1.tex
@@ -78,7 +78,7 @@ Figures are already PDF/PNG on disk and are picked up via relative path.
 - ICIT provenance caveat: **verified** (§2.3, §7 L1, Appendix F)
 - Deterministic seeds on disk: **verified** (sha256_chain.json §"seeds")
 - Evidence on disk before speech: **verified** (this file alongside paper)
-- All LaTeX under `/Users/Zer0pa/ZPE/ZPE-Cipher/workspace/papers/paper1/`: **verified**
+- All LaTeX under `<MONOREPO_ROOT>/workspace/papers/paper1/`: **verified**
 
 ---
 

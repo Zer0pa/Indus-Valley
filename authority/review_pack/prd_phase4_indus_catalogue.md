@@ -381,4 +381,4 @@ ELSE:
 - Use dependency injection where it helps
 - Decouple components with interfaces where it makes sense
 - Separate functions into single responsibilities where useful
-- Keep all work inside `/Users/Zer0pa/ZPE/ZPE-Cipher`
+- Keep all work inside `<MONOREPO_ROOT>` (see `PRIVATE_PROVENANCE_APPENDIX.md` for the path mapping)

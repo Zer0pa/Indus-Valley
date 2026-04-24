@@ -52,7 +52,7 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# Local artefacts and large data (kept off GitHub, lives on HF)
+# Local artifacts and large data (kept off GitHub, lives on HF)
 /data/
 # /artifacts/ as a directory cannot be re-included once excluded, so we
 # match its contents (/artifacts/*) and then re-include the small,

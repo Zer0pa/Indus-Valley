@@ -76,6 +76,10 @@ remains visible in the package and fixture surfaces.
 | Architecture and truth map | `docs/ARCHITECTURE.md` |
 | Migration backlog and blockers | `MIGRATION_PLAN.md` |
 | Source and data boundaries | `SOURCE_BOUNDARY.md`, `DATA_POLICY.md` |
+| Orchestrator execution status | `STATUS_REPORT_2026-04-24.md` |
+| Licensing posture (controlling) | `PRIVATE_INTERNAL_LICENSE_NOTICE.md` |
+| HF custody register | `HF_CUSTODY_REGISTER.md` |
+| Symbolic-label decode (private) | `PRIVATE_PROVENANCE_APPENDIX.md` |
 
 ## Current Gaps
 

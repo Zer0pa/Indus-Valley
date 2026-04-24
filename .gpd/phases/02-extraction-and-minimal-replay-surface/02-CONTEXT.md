@@ -30,8 +30,9 @@ RunPod workspace for the source script and its catalogue JSON:
   and an unrelated public Indus corpus (`indus-valley-script-corpus`, a
   Rust project) were present.
 - Handover record (`../HANDOVER_NEXT_GNOSIS_ORCHESTRATOR_2026-04-23.md`)
-  names the original source repo as `/Users/Zer0pa/ZPE/ZPE-Cipher`, which
-  does not exist on this machine.
+  names the original source repo as `<MONOREPO_ROOT>` (see
+  `PRIVATE_PROVENANCE_APPENDIX.md` for the mapping), which does not exist
+  on this machine.
 
 The source is therefore not accessible from this environment. Per
 `AUTONOMOUS_EXECUTION_POLICY.md` §What Counts As A Blocker, a missing
