@@ -204,7 +204,7 @@ The staged repo is incomplete until it contains:
 - `TODO.md`
 - `docs/family/INDUS_EXPORT_CONTRACT.md`
 - `.gpd/` control-plane surfaces
-- `PRIVATE_INTERNAL_LICENSE_NOTICE.md` (controlling license statement until legal decides)
+- `NOTICE.md` (controlling license posture until legal decides)
 - `HF_CUSTODY_REGISTER.md` (off-repo custody truth)
 - `PRIVATE_PROVENANCE_APPENDIX.md` (private-only symbolic-label decode; must be removed before public release)
 

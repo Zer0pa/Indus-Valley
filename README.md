@@ -1,6 +1,6 @@
-# Gnosis Indus Atlas
-
 > **Notice:** This is a private internal repository. See `NOTICE.md`.
+
+# Gnosis Indus Atlas
 
 > Anchor application and evidence repo for the Indus lane.
 > Useful now, improving without overclaim.
@@ -87,7 +87,6 @@ generic search product, and not the portfolio's lead thesis.
 ├── PUBLIC_AUDIT_LIMITS.md                 # what audit can and cannot conclude
 ├── STATUS_REPORT_2026-04-24.md            # orchestrator execution narrative
 ├── HF_CUSTODY_REGISTER.md                 # off-repo storage truth
-├── PRIVATE_INTERNAL_LICENSE_NOTICE.md     # interim license-posture detail (transitional)
 ├── PRIVATE_PROVENANCE_APPENDIX.md         # private-only symbolic-label decode (remove before public)
 ├── MIGRATION_PLAN.md                      # extraction roadmap and waves
 ├── SOURCE_BOUNDARY.md                     # source families included / deferred / excluded
@@ -142,8 +141,7 @@ surfaces.
   `DATA_POLICY.md`.
 - **License text and public contact** are owner-deferred. `NOTICE.md`
   is the controlling legal posture until Zer0pa legal decides the
-  matrix; `PRIVATE_INTERNAL_LICENSE_NOTICE.md` carries the longer
-  interim detail.
+  matrix.
 - **Phase 02 landed only the search-without-decode slice.** The Phase
   4 catalogue and Phase 5 falsification slices are sequenced as later
   extraction waves (`MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`).

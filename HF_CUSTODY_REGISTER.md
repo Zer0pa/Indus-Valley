@@ -45,7 +45,7 @@ operations.
 | **Files** | `.gitattributes` (HF auto-init) |
 | **Last modified (UTC)** | 2026-04-23 23:20:23 |
 | **Created for** | `Zer0pa/Indus-Valley` model-weight custody (see `DATA_POLICY.md`) |
-| **Rights class** | private only; model-weight distribution is pending legal clearance per `PRIVATE_INTERNAL_LICENSE_NOTICE.md` §"Path to a public license" |
+| **Rights class** | private only; model-weight distribution is pending Zer0pa legal clearance per `NOTICE.md` |
 | **Content at register time** | none promoted yet; HF auto-init only |
 | **Consuming GitHub repo** | `Zer0pa/Indus-Valley` |
 | **Landing-zone-for** | model checkpoints produced from extracted runtime work (Phase 02 search_surface has no model weights — first candidate weights would come from Phase 4 catalogue runtime or Phase 5 falsification runtime, neither yet extracted) |
