@@ -1,0 +1,63 @@
+name: ci
+
+# Minimal CI for gnosis-indus.
+#
+# Runs the repo-local test surface on every push and pull request
+# targeting the default branch. The purpose is repo-truth evidence:
+# if pytest does not pass here, the README "Quick Start" replay claim
+# is not defensible in review.
+#
+# This workflow intentionally does NOT fetch large private HF assets
+# or hit external APIs. All inputs required by the test suite are
+# repo-local fixtures under `artifacts/phase4/` and the authority
+# bundle under `authority/`. The Phase 02 search_surface package is
+# pure stdlib; the optional `numerics` extra (numpy) is installed but
+# not required by any current test path.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    name: pytest (3.11)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install package + test + numerics extras
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[test,numerics]'
+
+      - name: Run repo-truth test suite
+        run: |
+          pytest -q
+        env:
+          # Keep the working tree clean: no .pyc bytecode litter.
+          PYTHONDONTWRITEBYTECODE: "1"
+
+      - name: Confirm working tree clean after pytest
+        # The Phase 02 verification report and the brief's pause-point
+        # gate both require that pytest does not mutate tracked
+        # artifacts. Fail the job loudly if it does.
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::pytest mutated tracked files; see git status:"
+            git status --short
+            git diff --stat
+            exit 1
+          fi
