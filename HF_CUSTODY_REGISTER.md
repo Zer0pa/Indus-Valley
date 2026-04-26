@@ -1,6 +1,6 @@
 # Hugging Face Custody Register — Indus-Valley
 
-**As of:** 2026-04-24
+**As of:** 2026-04-26
 **Token identity verified:** `Architect-Prime` (org membership `Zer0pa`)
 **Scope:** off-repo storage surfaces associated with `Zer0pa/Indus-Valley`
 
@@ -25,28 +25,28 @@ operations.
 | **Repo ID** | `Zer0pa/gnosis-indus-artifacts` |
 | **Repo type** | `dataset` |
 | **Private** | `true` |
-| **Revision SHA (main)** | `19fc4a7eff1e7ed2229e560d781cfd0a4b0dd41f` |
-| **File count** | 1 |
-| **Files** | `.gitattributes` (HF auto-init) |
-| **Last modified (UTC)** | 2026-04-23 23:20:22 |
-| **Created for** | `Zer0pa/Indus-Valley` derived artefact custody (see `DATA_POLICY.md` Off-repo storage surfaces) |
-| **Rights class** | holds `PUBLIC_LATER` and `FETCH_EXTERNAL` derived artefacts only; never raw sign images, never `BLOCKED_RIGHTS` assets |
-| **Content at register time** | none promoted yet; HF auto-init only |
+| **Revision SHA (main)** | `2a01c7fb95950006c4c1a7d0216484e95fe02fd0` |
+| **File count** | 2 |
+| **Files** | `.gitattributes` (HF auto-init), `README.md` (Gnosis-family card per `HF_LANE_EXECUTION_BRIEF_2026-04-26.md` §5) |
+| **Last modified (UTC)** | 2026-04-26 18:33:45 |
+| **Created for** | `Zer0pa/Indus-Valley` derived artifact custody (see `DATA_POLICY.md` Off-repo storage surfaces) |
+| **Rights class** | holds `PUBLIC_LATER` and `FETCH_EXTERNAL` derived artifacts only; never raw sign images, never `BLOCKED_RIGHTS` assets |
+| **Content at register time** | README card only; no scientific artifacts promoted yet |
 | **Consuming GitHub repo** | `Zer0pa/Indus-Valley` |
-| **Landing-zone-for** | derived cluster JSON (e.g. full k=70 catalogue if rights clear), evaluation outputs, intermediate Phase 4 / Phase 5 JSON artefacts |
+| **Landing-zone-for** | derived cluster JSON (e.g. full k=70 catalogue if rights clear), evaluation outputs, intermediate Phase 4 / Phase 5 JSON artifacts |
 
 | Field | Value |
 | --- | --- |
 | **Repo ID** | `Zer0pa/gnosis-indus-models` |
 | **Repo type** | `model` |
 | **Private** | `true` |
-| **Revision SHA (main)** | `84531841b6aa346fe789c9b9d6d75072cc8a97c0` |
-| **File count** | 1 |
-| **Files** | `.gitattributes` (HF auto-init) |
-| **Last modified (UTC)** | 2026-04-23 23:20:23 |
+| **Revision SHA (main)** | `17c763826abfa20f5933d7b752f7e0c0b8d105a0` |
+| **File count** | 2 |
+| **Files** | `.gitattributes` (HF auto-init), `README.md` (Gnosis-family card per `HF_LANE_EXECUTION_BRIEF_2026-04-26.md` §5) |
+| **Last modified (UTC)** | 2026-04-26 18:33:46 |
 | **Created for** | `Zer0pa/Indus-Valley` model-weight custody (see `DATA_POLICY.md`) |
 | **Rights class** | private only; model-weight distribution is pending Zer0pa legal clearance per `NOTICE.md` |
-| **Content at register time** | none promoted yet; HF auto-init only |
+| **Content at register time** | README card only; no weights promoted yet |
 | **Consuming GitHub repo** | `Zer0pa/Indus-Valley` |
 | **Landing-zone-for** | model checkpoints produced from extracted runtime work (Phase 02 search_surface has no model weights — first candidate weights would come from Phase 4 catalogue runtime or Phase 5 falsification runtime, neither yet extracted) |
 
@@ -65,8 +65,9 @@ and it is not in scope for this lane.
 ## Checksums
 
 Not provided at register time: both repos contain only HF auto-init
-`.gitattributes` and no substantive files. Once real artefacts land,
-this register must be regenerated with SHA-256 checksums per file.
+`.gitattributes` plus the Gnosis-family README card and no
+scientific-artifact files. Once real artifacts land, this register
+must be regenerated with SHA-256 checksums per file.
 
 ## Verification command
 
@@ -82,17 +83,26 @@ for rt, rid in [('dataset', 'Zer0pa/gnosis-indus-artifacts'),
 "
 ```
 
-Expected output:
+Expected output (post-Wave-3 card upload):
 
 ```
-dataset:Zer0pa/gnosis-indus-artifacts private=True sha=19fc4a7eff1e files=1
-model:Zer0pa/gnosis-indus-models private=True sha=84531841b6aa files=1
+dataset:Zer0pa/gnosis-indus-artifacts private=True sha=2a01c7fb9595 files=2
+model:Zer0pa/gnosis-indus-models private=True sha=17c763826abf files=2
 ```
+
+## Architect-Prime drift
+
+`HF_LANE_EXECUTION_BRIEF_2026-04-26.md` §3 requires checking the
+`Architect-Prime` HF namespace for lane drift. Verified on 2026-04-26
+via `HfApi.list_datasets(author='Architect-Prime')` and
+`HfApi.list_models(author='Architect-Prime')`: both return empty.
+There is no Indus-related content under `Architect-Prime` to migrate
+or delete.
 
 ## What this register does **not** claim
 
 - It does not claim either repo currently carries any Indus-specific
-  content. Both are empty landing zones (HF auto-init only).
+  content. Both still hold only `.gitattributes` plus a README card.
 - It does not claim HF is the durable off-Mac custody for this repo's
   scientific outputs yet. GitHub (`Zer0pa/Indus-Valley`) is the current
   durable custody surface. HF becomes the artefact surface only when
