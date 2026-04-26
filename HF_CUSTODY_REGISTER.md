@@ -1,8 +1,30 @@
 # Hugging Face Custody Register — Indus-Valley
 
-**As of:** 2026-04-26
+**As of:** 2026-04-26 (Wave 4 — HF storage two-tier routing)
 **Token identity verified:** `Architect-Prime` (org membership `Zer0pa`)
 **Scope:** off-repo storage surfaces associated with `Zer0pa/Indus-Valley`
+
+## Routing rule (governing)
+
+Per `GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26.md` §1.2, Gnosis
+storage uses two tiers:
+
+- **`Zer0pa/*`** — lightweight discovery surface: README cards,
+  manifests, indices, small JSON / Markdown summaries, schema files,
+  small curated bundles useful for review;
+- **`Architect-Prime/*`** — canonical heavy private store: any single
+  file > 1 MB, total payload > 100 MB, model weights of any size, or
+  many-file directories where aggregate weight matters.
+
+For Indus-Valley, that maps to:
+
+- `Zer0pa/gnosis-indus-artifacts` (dataset, private) — exists, card-only
+- `Architect-Prime/gnosis-indus-artifacts` (dataset, private) — **not
+  provisioned** (no heavy content exists; per brief §3 notes, AP repos
+  are created only when the lane has heavy content worth storing)
+- `Zer0pa/gnosis-indus-models` (model, private) — exists, card-only
+- `Architect-Prime/gnosis-indus-models` (model, private) — **not
+  provisioned** (no Indus weights exist)
 
 This register answers the closeout-brief requirement
 (`GNOSIS_REPO_CLOSEOUT_BRIEF_2026-04-24.md` §Hugging Face State And
@@ -24,31 +46,35 @@ operations.
 | --- | --- |
 | **Repo ID** | `Zer0pa/gnosis-indus-artifacts` |
 | **Repo type** | `dataset` |
+| **Tier** | lightweight discovery surface (org tier) |
 | **Private** | `true` |
-| **Revision SHA (main)** | `2a01c7fb95950006c4c1a7d0216484e95fe02fd0` |
+| **Revision SHA (main)** | `686a0ae9b1ea0a54ae7f339a2bfdeff11ebee554` |
 | **File count** | 2 |
-| **Files** | `.gitattributes` (HF auto-init), `README.md` (Gnosis-family card per `HF_LANE_EXECUTION_BRIEF_2026-04-26.md` §5) |
-| **Last modified (UTC)** | 2026-04-26 18:33:45 |
-| **Created for** | `Zer0pa/Indus-Valley` derived artifact custody (see `DATA_POLICY.md` Off-repo storage surfaces) |
+| **Files** | `.gitattributes` (HF auto-init), `README.md` (Wave-4 two-tier-routing Gnosis card) |
+| **Last modified (UTC)** | 2026-04-26 (Wave-4 card upload) |
+| **Created for** | `Zer0pa/Indus-Valley` lightweight discovery surface (see `DATA_POLICY.md` Off-repo storage surfaces) |
+| **Holds** | manifests, indices, small JSON / MD summaries, review-facing materials. Heavy items route to AP per Routing Rule above. |
 | **Rights class** | holds `PUBLIC_LATER` and `FETCH_EXTERNAL` derived artifacts only; never raw sign images, never `BLOCKED_RIGHTS` assets |
 | **Content at register time** | README card only; no scientific artifacts promoted yet |
 | **Consuming GitHub repo** | `Zer0pa/Indus-Valley` |
-| **Landing-zone-for** | derived cluster JSON (e.g. full k=70 catalogue if rights clear), evaluation outputs, intermediate Phase 4 / Phase 5 JSON artifacts |
+| **Heavy-tier sibling** | `Architect-Prime/gnosis-indus-artifacts` — not provisioned (no heavy content) |
 
 | Field | Value |
 | --- | --- |
 | **Repo ID** | `Zer0pa/gnosis-indus-models` |
 | **Repo type** | `model` |
+| **Tier** | lightweight discovery surface (org tier) — see Operator note below |
 | **Private** | `true` |
-| **Revision SHA (main)** | `17c763826abfa20f5933d7b752f7e0c0b8d105a0` |
+| **Revision SHA (main)** | `0230f0dbc77d0087bbbe2e41a7cae7242e7e0ba5` |
 | **File count** | 2 |
-| **Files** | `.gitattributes` (HF auto-init), `README.md` (Gnosis-family card per `HF_LANE_EXECUTION_BRIEF_2026-04-26.md` §5) |
-| **Last modified (UTC)** | 2026-04-26 18:33:46 |
-| **Created for** | `Zer0pa/Indus-Valley` model-weight custody (see `DATA_POLICY.md`) |
+| **Files** | `.gitattributes` (HF auto-init), `README.md` (Wave-4 two-tier-routing Gnosis card) |
+| **Last modified (UTC)** | 2026-04-26 (Wave-4 card upload) |
+| **Created for** | model-card / scorecard / pointer surface for any future Indus weights. **Weights themselves never live here** — they route to `Architect-Prime/gnosis-indus-models` per the brief's two-tier rule (model weights = heavy tier). |
 | **Rights class** | private only; model-weight distribution is pending Zer0pa legal clearance per `NOTICE.md` |
-| **Content at register time** | README card only; no weights promoted yet |
+| **Content at register time** | README card only; no weights exist anywhere |
 | **Consuming GitHub repo** | `Zer0pa/Indus-Valley` |
-| **Landing-zone-for** | model checkpoints produced from extracted runtime work (Phase 02 search_surface has no model weights — first candidate weights would come from Phase 4 catalogue runtime or Phase 5 falsification runtime, neither yet extracted) |
+| **Heavy-tier sibling** | `Architect-Prime/gnosis-indus-models` — not provisioned (no Indus weights exist) |
+| **Operator note** | The brief's §3 routing table lists one HF row per Gnosis lane for `*-artifacts` only; a separate `*-models` repo is not explicitly blessed by the new matrix. This repo is retained pending orchestrator review of whether to keep, deprecate, or fold into `*-artifacts`. No churn taken in this pass per brief §6 step 6 ("stop before overreach"). |
 
 ## Spelling convention
 
@@ -83,21 +109,44 @@ for rt, rid in [('dataset', 'Zer0pa/gnosis-indus-artifacts'),
 "
 ```
 
-Expected output (post-Wave-3 card upload):
+Expected output (post-Wave-4 card refresh):
 
 ```
-dataset:Zer0pa/gnosis-indus-artifacts private=True sha=2a01c7fb9595 files=2
-model:Zer0pa/gnosis-indus-models private=True sha=17c763826abf files=2
+dataset:Zer0pa/gnosis-indus-artifacts private=True sha=686a0ae9b1ea files=2
+model:Zer0pa/gnosis-indus-models private=True sha=0230f0dbc77d files=2
 ```
 
-## Architect-Prime drift
+## Architect-Prime namespace state (Wave 4)
 
-`HF_LANE_EXECUTION_BRIEF_2026-04-26.md` §3 requires checking the
-`Architect-Prime` HF namespace for lane drift. Verified on 2026-04-26
-via `HfApi.list_datasets(author='Architect-Prime')` and
-`HfApi.list_models(author='Architect-Prime')`: both return empty.
-There is no Indus-related content under `Architect-Prime` to migrate
-or delete.
+The earlier Lane Execution Brief
+(`HF_LANE_EXECUTION_BRIEF_2026-04-26.md`) treated `Architect-Prime` as
+a cleanup target for Gnosis. The newer HF Storage Execution Brief
+(`GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26.md`) supersedes that
+posture and designates `Architect-Prime/*` as the canonical heavy
+private store for Gnosis.
+
+Verified on 2026-04-26 via the production `Architect-Prime` token:
+
+- `Architect-Prime` namespace contains 19 repos at audit time, all
+  ZPE-prefixed (`zpe-video-artifacts`, `zpe-neuro-artifacts`,
+  `zpe-prosody-artifacts`, etc.) plus restart packets. No Gnosis-
+  prefixed content of any kind exists under `Architect-Prime`.
+- No `Architect-Prime/gnosis-indus-artifacts` exists.
+- No `Architect-Prime/gnosis-indus-models` exists.
+
+Per the new brief's §3 notes ("create AP repos only if the lane
+actually has heavy content worth storing"), no AP repos were created
+for Indus in this pass. Heavy-content threshold check (§4):
+
+- Largest tracked file in the consuming GitHub repo is
+  `tests/test_search_surface.py` (~10 KB).
+- `artifacts/phase4/` total size is 8 KB.
+- No model weights exist anywhere for this lane.
+- Aggregate Indus footprint is well below 100 MB and contains no
+  individual file above 1 MB.
+
+Conclusion: Indus has no heavy content to route to AP. The two AP
+repos remain unprovisioned.
 
 ## What this register does **not** claim
 
