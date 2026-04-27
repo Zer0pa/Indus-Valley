@@ -14,7 +14,7 @@ fetch or derived-only surface.
 | `PUBLIC_LATER` | selected derived JSON metrics and paper source files | admit case by case |
 | `FETCH_EXTERNAL` | open corpora, canonical sign images, ICIT reference sources | do not vendor now |
 | `BLOCKED_RIGHTS` | image-bearing releases with unresolved provenance or redistribution terms | keep out of the public starter |
-| `OWNER_DEFERRED` | final license, public contact, unpublished release metadata | wait for owner input |
+| `OWNER_HELD` | public contact and unpublished release metadata | wait for owner input |
 
 ## Specific caveats
 

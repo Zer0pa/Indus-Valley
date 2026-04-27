@@ -1,9 +1,46 @@
-> **Notice:** This is a private internal repository. See `NOTICE.md`.
-
 # Gnosis Indus Atlas
 
 > Anchor application and evidence repo for the Indus lane.
 > Useful now, improving without overclaim.
+
+## Licensing
+
+This repository is part of the Zer0pa Gnosis Portfolio.
+
+**Code** in this repository is licensed under the Apache License 2.0. See
+`LICENSE` for the full text. SPDX identifier: `Apache-2.0`.
+
+**Documentation, reports, and written materials** are licensed under Creative
+Commons Attribution 4.0 International. SPDX identifier: `CC-BY-4.0`. Canonical
+terms: <https://creativecommons.org/licenses/by/4.0/>.
+
+**Data and fixtures** are handled per dataset and artifact family. See
+`DATA_POLICY.md` for this repository's data boundary. The code license does not
+license raw corpora, image-bearing cultural-heritage assets, private HF
+artifacts, model weights, endpoint logs, or operational transcripts.
+
+**Trademarks** - "Gnosis", "Zer0pa Gnosis", and distinctive sub-marks are
+trademarks of Zer0pa. Apache-2.0 and CC-BY-4.0 do not grant trademark rights.
+See `TRADEMARKS.md`.
+
+Public visibility is a separate repository-setting action. The license files in
+this repo define the intended open-source/open-documentation terms for released
+Gnosis code and written materials; they do not publish rights-gated data.
+
+
+## Traditional-Knowledge Acknowledgment
+
+This repository works with material originating from the Indus Valley
+Civilization, including the undeciphered Indus script. Zer0pa claims no
+proprietary right over the Indus script, its imagery, or the archaeological
+record.
+
+Zer0pa's work is the computational analysis, lattice methods, and falsification
+discipline applied to that material. This repository does not claim a definitive
+decipherment of any Indus sign or sequence.
+
+Good-faith inquiries from identified communities, governmental antiquity
+authorities, or institutional bodies may be sent to architects@zer0pa.ai.
 
 ## What This Is
 
@@ -39,7 +76,7 @@ generic search product, and not the portfolio's lead thesis.
 - We do not claim decipherment of the Indus script.
 - We do not claim proven substrate identification.
 - We do not claim public-release readiness; visibility stays
-  `INTERNAL` until Zer0pa legal decides the license matrix.
+  `INTERNAL` until rights, provenance, and release wording are reviewed.
 - We do not claim unrestricted public redistribution rights for any
   image-bearing or rights-gated corpus referenced in the original
   monorepo work; sign images stay `BLOCKED_RIGHTS` in
@@ -78,7 +115,7 @@ generic search product, and not the portfolio's lead thesis.
 
 ```
 .
-├── NOTICE.md                              # root legal posture (this pass)
+├── NOTICE                              # Apache-2.0 code and CC-BY-4.0 docs posture
 ├── README.md                              # this file
 ├── PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md # sovereign brief
 ├── AGENTS.md                              # autonomous-agent rules
@@ -139,9 +176,9 @@ surfaces.
 - **Image-rights and provenance** for any public image-bearing release
   remain unresolved; sign images stay `BLOCKED_RIGHTS` in
   `DATA_POLICY.md`.
-- **License text and public contact** are owner-deferred. `NOTICE.md`
-  is the controlling legal posture until Zer0pa legal decides the
-  matrix.
+- **License text has landed** as Apache-2.0 for code and CC-BY-4.0 for docs.
+  Public visibility remains separate and is blocked on rights, provenance, and
+  release wording review.
 - **Phase 02 landed only the search-without-decode slice.** The Phase
   4 catalogue and Phase 5 falsification slices are sequenced as later
   extraction waves (`MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`).

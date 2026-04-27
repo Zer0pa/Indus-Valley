@@ -2,28 +2,37 @@
 
 ## Authority
 
-The final legal authority for this repo is the `LICENSE` file once supplied.
-Until then, treat missing legal detail as `OWNER_DEFERRED`.
+The legal authority for repository code is `LICENSE` (Apache License 2.0).
+Documentation, reports, and written materials are released under Creative
+Commons Attribution 4.0 International unless a narrower file-level notice says
+otherwise.
+
+`NOTICE` records attribution, trademark, third-party, and data-boundary notes.
+`DATA_POLICY.md` controls whether data, fixtures, corpora, model weights, or
+image-bearing artifacts may be redistributed.
 
 ## Public Summary Rules
 
-- Do not claim broader rights than the actual license grants.
-- Do not imply unrestricted image-bearing redistribution where rights remain
-  unclear.
-- Do not turn roadmap intent into legal permission.
-- Keep the file short and factual.
+- Do not claim rights broader than Apache-2.0 for code and CC-BY-4.0 for docs.
+- Do not imply that code openness licenses raw corpora, cultural-heritage
+  imagery, private HF artifacts, endpoint logs, or model weights.
+- Do not describe a blocked scientific claim as closed merely because the repo
+  has a public license.
+- Keep claim, no-go, and retraction language aligned with the README and proof
+  anchors.
 
 ## Current Public Boundary
 
 | Topic | Current Public Statement | Source Of Authority |
-| --- | --- | --- |
-| License identity | `OWNER_DEFERRED` | pending owner input |
-| Commercial use | not stated until final license exists | pending owner input |
-| Redistribution | copied markdown docs only; other asset families depend on review | `DATA_POLICY.md` |
-| Novelty or protected scope | no decipherment or broad product-rights claim is made here | `AUTHORITY_SNAPSHOT.md`, `GOVERNANCE.md` |
-| Derived artifacts on HF | artifacts live in private HF repos (`Zer0pa/gnosis-indus-artifacts` and `Zer0pa/gnosis-indus-models`); no public redistribution until rights are cleared per `DATA_POLICY.md` | `DATA_POLICY.md` |
+|---|---|---|
+| Code license | Apache-2.0 | `LICENSE` |
+| Documentation and reports | CC-BY-4.0 | `README.md`, `NOTICE` |
+| Data and fixtures | repo-specific; not automatically licensed | `DATA_POLICY.md` |
+| Model weights and checkpoints | separate release required | `DATA_POLICY.md`, HF custody registers |
+| Trademarks | not granted by Apache-2.0 or CC-BY-4.0 | `TRADEMARKS.md` |
 
-## Owner Inputs Still Needed
+## Inputs Still Needed Before Visibility Flip
 
-- final public license text
-- public contact route
+- final public/non-public visibility decision for this repo
+- data/artifact scrub for any rights-gated assets
+- third-party dependency re-audit before a tagged public release
