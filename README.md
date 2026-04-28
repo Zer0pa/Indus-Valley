@@ -3,6 +3,12 @@
 > Anchor application and evidence repo for the Indus lane.
 > Useful now, improving without overclaim.
 
+---
+
+**This is a live window into the Zer0pa lab.** None of the work in this repo is a final release. Zer0pa GitHub repos are open as a matter of course for visibility and community participation. Always-in-beta is the posture: useful now, improving continuously. Open gates and honest blockers are surfaced in plain text below — see `## What We Don't Claim` and `## Upcoming Workstreams`.
+
+---
+
 ## Licensing
 
 This repository is part of the Zer0pa Gnosis Portfolio.
@@ -44,14 +50,30 @@ authorities, or institutional bodies may be sent to architects@zer0pa.ai.
 
 ## What This Is
 
-Private Gnosis applied-research repo for the Indus-script lane. It
-packages the carried-forward evidence chain around the Indus
-morphological catalogue (admitted at k=70 with a stability caveat),
-the Phase 5 falsification work (linguistic structure confirmed,
-substrate identification not), the Paper 1 / Paper 2 verdict stack,
-and a search-without-decode application surface implemented in this
-repo as the first runtime slice. It is not a decipherment repo, not a
-generic search product, and not the portfolio's lead thesis.
+Gnosis applied-research repo for the Indus-script lane. It packages
+the carried-forward evidence chain around the Indus morphological
+catalogue (admitted at k=70 with a stability caveat), the Phase 5
+falsification work (linguistic structure confirmed, substrate
+identification not), the Paper 1 / Paper 2 verdict stack, and a
+search-without-decode application surface implemented in this repo as
+the first runtime slice. It is not a decipherment repo, not a generic
+search product, and not the portfolio's lead thesis.
+
+**Headline metric:** `pytest -q → 14 passed` (≈0.03 s local, ≈0.3 s
+on RunPod from fresh clone). The clean-room search-without-decode
+runtime (`src/gnosis_indus/search_surface/`) reproduces 6
+authority-doc query records on the demo fixture
+(`artifacts/phase4/indus_catalogue_demo_fixture.json`), with
+`sequence_search` median latency well under the authority-doc 100 ms
+gate (`authority/review_pack/search_demo_summary.md`). Per-phase
+verifications: `.gpd/phases/0{1,2,3}-*/VERIFICATION.md` — all PASS,
+10/10 confidence.
+
+**Honest blocker:** Image-bearing sign rights remain `BLOCKED_RIGHTS`
+per `DATA_POLICY.md`; the full k=70 catalogue (412 signs / 70 clusters
+/ 179 inscriptions) stays `FETCH_EXTERNAL`. The bundled fixture is
+small and authority-anchored to
+`authority/review_pack/search_demo_summary.md`.
 
 ## What We Prove
 
@@ -75,8 +97,9 @@ generic search product, and not the portfolio's lead thesis.
 
 - We do not claim decipherment of the Indus script.
 - We do not claim proven substrate identification.
-- We do not claim public-release readiness; visibility stays
-  `INTERNAL` until rights, provenance, and release wording are reviewed.
+- We do not claim all rights gates are cleared. Image rights for
+  sign-bearing releases remain open; this is an open lab, not a
+  finished product.
 - We do not claim unrestricted public redistribution rights for any
   image-bearing or rights-gated corpus referenced in the original
   monorepo work; sign images stay `BLOCKED_RIGHTS` in
@@ -116,34 +139,44 @@ generic search product, and not the portfolio's lead thesis.
 ```
 .
 ├── NOTICE                              # Apache-2.0 code and CC-BY-4.0 docs posture
-├── README.md                              # this file
+├── README.md                           # this file
+├── CHANGELOG                           # release history
+├── CITATION.cff                        # citation metadata
+├── CODE_OF_CONDUCT.md                  # community conduct standards
 ├── PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md # sovereign brief
-├── AGENTS.md                              # autonomous-agent rules
-├── AUTHORITY_SNAPSHOT.md                  # carried-forward truth
-├── AUDITOR_PLAYBOOK.md                    # outsider-audit fast path (pre-Phase-02 framing — see STATUS_REPORT)
-├── PUBLIC_AUDIT_LIMITS.md                 # what audit can and cannot conclude
-├── STATUS_REPORT_2026-04-24.md            # orchestrator execution narrative
-├── HF_CUSTODY_REGISTER.md                 # off-repo storage truth
-├── PRIVATE_PROVENANCE_APPENDIX.md         # private-only symbolic-label decode (remove before public)
-├── MIGRATION_PLAN.md                      # extraction roadmap and waves
-├── SOURCE_BOUNDARY.md                     # source families included / deferred / excluded
-├── DATA_POLICY.md                         # data classes and rights posture
+├── AGENTS.md                           # autonomous-agent rules
+├── AUTHORITY_SNAPSHOT.md               # carried-forward truth
+├── AUDITOR_PLAYBOOK.md                 # outsider-audit fast path (pre-Phase-02 vintage; refresh pending)
+├── PUBLIC_AUDIT_LIMITS.md              # what audit can and cannot conclude
+├── HF_CUSTODY_REGISTER.md             # off-repo storage truth
+├── SOURCE_BOUNDARY.md                  # source families included / deferred / excluded
+├── DATA_POLICY.md                      # data classes and rights posture
+├── ROADMAP.md                          # milestone tracker
+├── _internal/                          # scaffolding and internal orchestration docs
+│   ├── MIGRATION_PLAN.md               # extraction roadmap and waves (internal)
+│   ├── STATUS_REPORT_2026-04-24.md     # orchestrator execution narrative (internal)
+│   ├── AUTONOMOUS_EXECUTION_POLICY.md
+│   ├── GPD_BOOTSTRAP_GUIDE.md
+│   ├── STARTUP_PROMPT.md
+│   ├── UNIVERSAL_STARTUP_PROMPT.md
+│   ├── WORKSTREAM_GPD_INIT_CHECKLIST.md
+│   └── TEMPLATE_USAGE.md
 ├── docs/
 │   ├── ARCHITECTURE.md
 │   ├── LEGAL_BOUNDARIES.md
 │   ├── FAQ.md
 │   ├── SUPPORT.md
 │   └── family/INDUS_EXPORT_CONTRACT.md
-├── authority/                             # exact-source-only verdict copies
-│   ├── review_pack/                       # Phase 4/5 governing verdicts and PRDs
-│   └── papers/                            # Paper 1/2 governing verdicts
+├── authority/                          # exact-source-only verdict copies
+│   ├── review_pack/                    # Phase 4/5 governing verdicts and PRDs
+│   └── papers/                         # Paper 1/2 governing verdicts
 ├── src/gnosis_indus/
-│   └── search_surface/                    # Phase 02 first runtime slice (clean-room)
+│   └── search_surface/                 # Phase 02 first runtime slice (clean-room)
 ├── artifacts/phase4/
 │   └── indus_catalogue_demo_fixture.json  # authority-anchored demo fixture
 ├── tests/
-│   └── test_search_surface.py             # 14 tests reproducing authority queries
-├── .gpd/                                  # GPD control plane (PROJECT, STATE, ROADMAP, REQUIREMENTS, DECISIONS, CONVENTIONS, phase plans + verifications)
+│   └── test_search_surface.py          # 14 tests reproducing authority queries
+├── .gpd/                               # GPD control plane (PROJECT, STATE, ROADMAP, REQUIREMENTS, DECISIONS, CONVENTIONS, phase plans + verifications)
 └── .github/
     ├── ISSUE_TEMPLATE/
     ├── PULL_REQUEST_TEMPLATE.md
@@ -186,5 +219,47 @@ surfaces.
   is not vendored; the bundled demo fixture reproduces only what the
   authority doc enumerates.
 - **`AUDITOR_PLAYBOOK.md` is pre-Phase-02 vintage.** Functionally
-  superseded by the README Quick Start and `STATUS_REPORT_2026-04-24.md`,
+  superseded by the README Quick Start and the Phase 03 verification
+  reports (`.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md`),
   but the playbook itself awaits a maintenance refresh.
+
+## Commercial Readiness
+
+| Field | Value |
+| --- | --- |
+| **Verdict** | `STAGED` |
+| **Posture** | `rights_gated_data_classes_image_blocked_text_fetch_external` |
+
+The runtime and test surface are functional and reproducible from a fresh clone.
+Image-rights and full-catalogue redistribution gates remain open; those are
+explicit, not hidden. `STAGED` reflects: production-quality scaffold, not yet
+cleared for all data releases.
+
+## Upcoming Workstreams
+
+### Active Engineering
+
+- **AUDITOR_PLAYBOOK.md maintenance refresh** — currently self-flagged
+  "pre-Phase-02 vintage"; should be updated to reference the Phase 02 / 03
+  verification reports and the Quick Start replay path. (`AUDITOR_PLAYBOOK.md`)
+- **Phase 4 catalogue extraction wave** — extract first clean runtime slice
+  into `src/gnosis_indus/catalogue/` per `_internal/MIGRATION_PLAN.md` wave 2.
+- **Phase 5 falsification extraction wave** — extract first clean runtime slice
+  into `src/gnosis_indus/falsification/` per `_internal/MIGRATION_PLAN.md` wave 3.
+
+### Operations / External Dependency
+
+- **Image-rights and provenance review** for any image-bearing public release;
+  sign images remain `BLOCKED_RIGHTS` in `DATA_POLICY.md` until a rights review
+  is completed by the relevant authority.
+- **Full k=70 catalogue redistribution rights review** — the 412-sign / 70-cluster
+  / 179-inscription catalogue stays `FETCH_EXTERNAL` until cleared.
+
+### Research-Deferred — Investigation Underway
+
+_(none currently; Phase 5 posture — linguistic structure confirmed, substrate
+identification not — is stable and not under active re-investigation.)_
+
+### Zero-Base Scientific Thinking — GPD Research and Planning Pending
+
+_(none currently.)_
