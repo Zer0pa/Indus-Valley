@@ -1,0 +1,37 @@
+# Changelog — Gnosis Indus Atlas
+
+All notable changes to this repository are documented here.
+
+## Unreleased
+
+### 2026-04-28 — Public refresh
+- Removed `PRIVATE_PROVENANCE_APPENDIX.md` (rights-gated removal before public visibility)
+- Added live-window banner and `## Commercial Readiness` + `## Upcoming Workstreams` sections to README
+- Added `## Commercial Readiness` verdict cell: `STAGED` / `rights_gated_data_classes_image_blocked_text_fetch_external`
+- Relocated scaffolding noise to `_internal/`: AUTONOMOUS_EXECUTION_POLICY.md, GPD_BOOTSTRAP_GUIDE.md, STARTUP_PROMPT.md, UNIVERSAL_STARTUP_PROMPT.md, WORKSTREAM_GPD_INIT_CHECKLIST.md, TEMPLATE_USAGE.md, MIGRATION_PLAN.md, STATUS_REPORT_2026-04-24.md
+- Converted TODO.md open items to GitHub Issues #1, #2, #3; removed TODO.md
+- Added CHANGELOG, CITATION.cff, CODE_OF_CONDUCT.md to minimum doc set
+- Updated repo description and topics (≥10) for public discoverability
+- Updated ROADMAP.md milestone statuses to reflect completed phases 01/02/03
+
+## Phase 03 — 2026-04-24
+- Truth-surface coherence audit complete; PRD §8 split into "Closed in Phase 02" and "Currently open"
+- README Quick Start, AUTHORITY_SNAPSHOT.md, PRD §8, and WORKSTREAM_GPD_INIT_CHECKLIST brought into agreement
+- Phase 03 verification: 10/10 PASS (`.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md`)
+
+## Phase 02 — 2026-04-24
+- Clean-room search-without-decode runtime landed at `src/gnosis_indus/search_surface/`
+- 14-test pytest suite reproduces 6 authority-doc query records
+- Authority-anchored demo fixture: `artifacts/phase4/indus_catalogue_demo_fixture.json`
+- Independent smoke verification on RunPod from fresh clone: PASS
+- Phase 02 verification: 10/10 PASS (`.gpd/phases/02-extraction-and-minimal-replay-surface/VERIFICATION.md`)
+
+## Phase 01 — 2026-04-24
+- Source truth admission: first extraction slice named (search-without-decode)
+- DATA_POLICY.md first-slice classification table
+- Phase 4 catalogue and Phase 5 falsification families sequenced as explicit later waves
+- Phase 01 verification: PASS_WITH_NOTES, 9/10 (`.gpd/phases/01-source-truth-and-authority-admission/VERIFICATION.md`)
+
+## Phase 00 — 2026-04-24 (pre-session)
+- GPD control plane initialized; authority bundle copied; starter package rooted at `src/gnosis_indus/`
+- Repo created on GitHub as `Zer0pa/Indus-Valley`

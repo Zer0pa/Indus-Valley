@@ -11,17 +11,18 @@ promotion.
 
 | Milestone | Status | Purpose |
 | --- | --- | --- |
-| M0 - staged scaffold | done | repo root, authority bundle, and control plane exist |
-| M1 - source truth admission | next | freeze source ledger, exclusions, and data policy |
-| M2 - minimal extraction | planned | land the first clean package slice under `src/gnosis_indus/` |
-| M3 - replay surface | planned | add a stronger smoke or replay path for admitted surfaces |
-| M4 - promotion readiness | blocked | requires rights, license, and coherence closure |
+| M0 - staged scaffold | **done** | repo root, authority bundle, and control plane exist |
+| M1 - source truth admission | **done** (Phase 01 PASS, 9/10) | froze source ledger, exclusions, and data policy |
+| M2 - minimal extraction | **done** (Phase 02 PASS, 10/10) | landed clean-room search_surface slice under `src/gnosis_indus/`; 14 pytest passes |
+| M3 - replay surface | **done** (Phase 03 PASS, 10/10) | truth-surface coherence audit; clean-machine replay confirmed on RunPod |
+| M4 - promotion readiness | **blocked** | requires image-rights clearance, full catalogue redistribution review, and licence/contact closure |
 
 ## Near-term priorities
 
-- admit the first Phase 4 and Phase 5 source families cleanly
-- define fetch surfaces for corpora and sign images
-- keep search surface in-repo while extraction proceeds
+- extract Phase 4 catalogue runtime slice into `src/gnosis_indus/catalogue/` (see GitHub Issue #1)
+- extract Phase 5 falsification runtime slice into `src/gnosis_indus/falsification/` (see GitHub Issue #2)
+- add fetch manifests for image and corpus families that cannot ship now (see GitHub Issue #3)
+- refresh AUDITOR_PLAYBOOK.md to reflect post-Phase-02 state
 
 ## Explicitly not on this roadmap
 

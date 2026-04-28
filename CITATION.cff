@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this research in your work, please cite it as below."
+type: software
+title: "Gnosis Indus Atlas"
+abstract: >
+  Anchor application and evidence repository for the Indus-Valley lane of the
+  Zer0pa Gnosis Portfolio. Packages a clean-room search-without-decode runtime,
+  Phase 4 conditional morphological catalogue (k=70, with stability caveat),
+  Phase 5 non-decipherment falsification posture, and the paper verdict stack.
+  No decipherment of the Indus script is claimed or intended.
+authors:
+  - name: "Zer0pa-Architect-Prime"
+    alias: "@Architect-Prime"
+repository-code: "https://github.com/Zer0pa/Indus-Valley"
+license: Apache-2.0
+version: "0.1.0-staged"
+date-released: "2026-04-28"
+keywords:
+  - indus-valley
+  - indus-script
+  - non-decipherment
+  - falsification
+  - search-without-decode
+  - gnosis
+  - zer0pa
+  - methodology
+  - archaeology
+  - traditional-knowledge

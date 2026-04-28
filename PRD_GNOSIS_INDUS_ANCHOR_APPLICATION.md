@@ -206,7 +206,7 @@ The staged repo is incomplete until it contains:
 - `.gpd/` control-plane surfaces
 - `NOTICE.md` (controlling license posture until legal decides)
 - `HF_CUSTODY_REGISTER.md` (off-repo custody truth)
-- `PRIVATE_PROVENANCE_APPENDIX.md` (private-only symbolic-label decode; must be removed before public release)
+- ~~`PRIVATE_PROVENANCE_APPENDIX.md`~~ (removed 2026-04-28 public-refresh; symbolic-label decode held in operator runbook only)
 
 ## 8. Current Promotion Blockers
 
