@@ -158,6 +158,9 @@ LEAK_SCAN_SKIP_DIRS = {
     "authority",  # exact-source authority copies intentionally retain symbolic provenance placeholders
     "_internal",  # historical orchestration material, not the public/front-door operating surface
 }
+LEAK_SCAN_SKIP_FILES = {
+    "tools/indus_ops_gate.py",  # this file declares the forbidden regexes it enforces
+}
 
 
 def git_tracked_files(root: Path) -> list[Path]:
@@ -213,12 +216,14 @@ def check_text_contracts(root: Path, failures: list[str]) -> None:
 
 def check_operational_leaks(root: Path, tracked: list[Path], failures: list[str]) -> None:
     for path in tracked:
+        relpath = path.relative_to(root).as_posix()
+        if relpath in LEAK_SCAN_SKIP_FILES:
+            continue
         rel_parts = path.relative_to(root).parts
         if rel_parts and rel_parts[0] in LEAK_SCAN_SKIP_DIRS:
             continue
         if path.suffix.lower() not in {".md", ".py", ".toml", ".yml", ".yaml", ".json", ".cff", ""}:
             continue
-        relpath = path.relative_to(root).as_posix()
         text = read_text(path)
         for line_no, line in enumerate(text.splitlines(), start=1):
             for pattern, label in LEAK_PATTERNS:
