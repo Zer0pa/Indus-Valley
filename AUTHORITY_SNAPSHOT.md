@@ -27,7 +27,8 @@ standalone generic search product.
 ### Currently open
 
 - image and reference licensing/provenance gaps
-- owner-deferred release metadata such as final license and contact
+- full-catalogue redistribution review
+- release wording review for any public visibility change
 
 ### Closed in Phase 02
 
@@ -39,3 +40,12 @@ standalone generic search product.
 - no clean-machine replay path beyond the starter smoke test —
   closed by `pip install -e .[test] && pytest -q` (14 passed;
   independently confirmed on RunPod pod from fresh clone)
+
+### Closed in the 2026-04-28 public-refresh wave
+
+- code/docs license posture — closed by Apache-2.0 for code and CC-BY-4.0
+  for documentation, reports, and written materials; this does not license
+  raw corpora, image-bearing cultural-heritage assets, model weights, or
+  private custody surfaces
+- source-boundary operational gate — closed by `tools/indus_ops_gate.py`,
+  wired into `.github/workflows/ci.yml`

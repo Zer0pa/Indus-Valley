@@ -115,8 +115,9 @@ small and authority-anchored to
 | `pytest -q` (Python 3.11) | `14 passed` (≈0.03 s local, ≈0.3 s on RunPod from fresh clone) |
 | `python -m compileall src` | passes |
 | Per-phase verification reports | `.gpd/phases/0{1,2,3}-*/VERIFICATION.md` (all PASS, latest 10/10 confidence) |
-| GitHub Actions CI | wired in `.github/workflows/ci.yml` (boring CI: install + pytest, no external fetches) |
-| Operational endpoint leak scan | 0 matches across all tracked surfaces |
+| GitHub Actions CI | wired in `.github/workflows/ci.yml` (package install, pinned Ops-Gates consumer smoke, Indus ops gate, pytest, clean-tree check; no HF/data fetches) |
+| Indus ops gate | `tools/indus_ops_gate.py` enforces source-boundary, leakage, stale-doc, and rights-gated artifact checks |
+| Operational endpoint leak scan | enforced by the Indus ops gate on live operating surfaces; symbolic placeholders are allowed, decoded paths and secret-shaped tokens are not |
 | Falsification battery (PRD §1.3) | all four conditions hold (k=70 caveat preserved; no decipherment language; search not reframed as sovereign repo; no image-rights inflation) |
 
 ## Proof Anchors
@@ -132,6 +133,7 @@ small and authority-anchored to
 | Phase 02 verification (10/10) | `.gpd/phases/02-extraction-and-minimal-replay-surface/VERIFICATION.md` |
 | Phase 03 verification (10/10, PRD complete) | `.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md` |
 | Decision log (six rows, each with rollback trigger) | `.gpd/DECISIONS.md` |
+| Operational source-boundary gate | `tools/indus_ops_gate.py`, `.github/workflows/ci.yml` |
 | Off-repo custody register | `HF_CUSTODY_REGISTER.md` |
 
 ## Repo Shape
@@ -146,7 +148,7 @@ small and authority-anchored to
 ├── PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md # sovereign brief
 ├── AGENTS.md                           # autonomous-agent rules
 ├── AUTHORITY_SNAPSHOT.md               # carried-forward truth
-├── AUDITOR_PLAYBOOK.md                 # outsider-audit fast path (pre-Phase-02 vintage; refresh pending)
+├── AUDITOR_PLAYBOOK.md                 # outsider-audit fast path
 ├── PUBLIC_AUDIT_LIMITS.md              # what audit can and cannot conclude
 ├── HF_CUSTODY_REGISTER.md             # off-repo storage truth
 ├── SOURCE_BOUNDARY.md                  # source families included / deferred / excluded
@@ -176,6 +178,8 @@ small and authority-anchored to
 │   └── indus_catalogue_demo_fixture.json  # authority-anchored demo fixture
 ├── tests/
 │   └── test_search_surface.py          # 14 tests reproducing authority queries
+├── tools/
+│   └── indus_ops_gate.py               # source-boundary / leakage / stale-doc gate
 ├── .gpd/                               # GPD control plane (PROJECT, STATE, ROADMAP, REQUIREMENTS, DECISIONS, CONVENTIONS, phase plans + verifications)
 └── .github/
     ├── ISSUE_TEMPLATE/
@@ -214,14 +218,10 @@ surfaces.
   release wording review.
 - **Phase 02 landed only the search-without-decode slice.** The Phase
   4 catalogue and Phase 5 falsification slices are sequenced as later
-  extraction waves (`MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`).
+  extraction waves (`_internal/MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`).
 - **Full k=70 catalogue** (412 signs, 70 clusters, 179 inscriptions)
   is not vendored; the bundled demo fixture reproduces only what the
   authority doc enumerates.
-- **`AUDITOR_PLAYBOOK.md` is pre-Phase-02 vintage.** Functionally
-  superseded by the README Quick Start and the Phase 03 verification
-  reports (`.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md`),
-  but the playbook itself awaits a maintenance refresh.
 
 ## Commercial Readiness
 
@@ -239,9 +239,6 @@ cleared for all data releases.
 
 ### Active Engineering
 
-- **AUDITOR_PLAYBOOK.md maintenance refresh** — currently self-flagged
-  "pre-Phase-02 vintage"; should be updated to reference the Phase 02 / 03
-  verification reports and the Quick Start replay path. (`AUDITOR_PLAYBOOK.md`)
 - **Phase 4 catalogue extraction wave** — extract first clean runtime slice
   into `src/gnosis_indus/catalogue/` per `_internal/MIGRATION_PLAN.md` wave 2.
 - **Phase 5 falsification extraction wave** — extract first clean runtime slice

@@ -14,7 +14,7 @@ fetch or derived-only surface.
 | `PUBLIC_LATER` | selected derived JSON metrics and paper source files | admit case by case |
 | `FETCH_EXTERNAL` | open corpora, canonical sign images, ICIT reference sources | do not vendor now |
 | `BLOCKED_RIGHTS` | image-bearing releases with unresolved provenance or redistribution terms | keep out of the public starter |
-| `OWNER_HELD` | public contact and unpublished release metadata | wait for owner input |
+| `OWNER_HELD` | unpublished release metadata | wait for owner input |
 
 ## Specific caveats
 
@@ -63,12 +63,13 @@ landing zones for working artifacts are:
 
 | Surface | Locator | Scope | Rights posture |
 | --- | --- | --- | --- |
-| HF dataset repo | `Zer0pa/gnosis-indus-artifacts` (private) | derived Phase 4/5 artifacts, evaluation outputs, intermediate derived JSON | private; no public redistribution until rights are cleared |
-| HF model repo | `Zer0pa/gnosis-indus-models` (private) | model checkpoints produced by runtime extractions | private; weights remain scoped to the lane |
-| RunPod workspace | `/workspace/gnosis-indus-env/repo` on pod `<RUNPOD_POD>` | ephemeral compute staging for extraction and smoke paths | scratch; anything promoted back to this repo must pass `DATA_POLICY` classification |
+| HF dataset repo | `Architect-Prime/gnosis-indus-artifacts` (private) | derived Phase 4/5 artifacts, evaluation outputs, intermediate derived JSON | private; no public redistribution until rights are cleared |
+| HF model repo | `Architect-Prime/gnosis-indus-models` (private) | model checkpoints produced by runtime extractions | private; weights remain scoped to the lane |
+| RunPod workspace | `<RUNPOD_WORKSPACE>` on pod `<RUNPOD_POD>` | ephemeral compute staging for extraction and smoke paths | scratch; anything promoted back to this repo must pass `DATA_POLICY` classification |
 
 `FETCH_EXTERNAL` families are fetched from their canonical upstream homes and
-never mirrored into `Zer0pa/gnosis-indus-artifacts` unless a fetch manifest
-records the provenance and rights decision.
+never mirrored into the private HF store unless a fetch manifest records the
+provenance and rights decision. Per `HF_CUSTODY_REGISTER.md`, Zer0pa-org HF
+storage is not used for this lane.
 
 `BLOCKED_RIGHTS` families never land on any of the above surfaces.

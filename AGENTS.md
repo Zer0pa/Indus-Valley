@@ -36,11 +36,14 @@ standalone search product.
 
 - `authority/` contains copied verdict and review documents. Update it only with
   explicit source replacement, never by paraphrase.
-- `src/gnosis_indus/` is the future runtime package root.
+- `src/gnosis_indus/search_surface/` is the current first runtime slice;
+  `src/gnosis_indus/catalogue/` and `src/gnosis_indus/falsification/` remain
+  later extraction targets.
 - `docs/family/INDUS_EXPORT_CONTRACT.md` defines what downstream bundles may
   claim.
-- `MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`, and `DATA_POLICY.md` are binding
-  handover surfaces, not optional commentary.
+- `_internal/MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, and
+  `tools/indus_ops_gate.py` are binding handover surfaces, not optional
+  commentary.
 
 ## What success looks like
 

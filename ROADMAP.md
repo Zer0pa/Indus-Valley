@@ -15,7 +15,7 @@ promotion.
 | M1 - source truth admission | **done** (Phase 01 PASS, 9/10) | froze source ledger, exclusions, and data policy |
 | M2 - minimal extraction | **done** (Phase 02 PASS, 10/10) | landed clean-room search_surface slice under `src/gnosis_indus/`; 14 pytest passes |
 | M3 - replay surface | **done** (Phase 03 PASS, 10/10) | truth-surface coherence audit; clean-machine replay confirmed on RunPod |
-| M4 - promotion readiness | **blocked** | requires image-rights clearance, full catalogue redistribution review, and licence/contact closure |
+| M4 - promotion readiness | **blocked** | requires image-rights clearance, full catalogue redistribution review, and release-wording review |
 
 ## Near-term priorities
 

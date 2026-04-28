@@ -21,7 +21,7 @@ metrics, or release language from other Gnosis or ZPE repos.
 - Keep the Phase 4 caveat visible where relevant.
 - Keep search framed as an in-repo application surface.
 - If a fact is not verified here, mark it `UNKNOWN`, `PARTIAL`, `UNVERIFIED`,
-  `INFERRED`, or `OWNER_DEFERRED`.
+  `INFERRED`, or `OWNER_HELD` when it depends on unpublished operator input.
 
 ## Pull Requests
 

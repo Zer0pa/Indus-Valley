@@ -29,8 +29,8 @@ surface support.
 - Do not turn search-demo usefulness into a separate product boundary.
 - Do not treat later k=100 paper improvements as erasing the earlier Phase 4
   stability caveat.
-- Treat `OWNER_DEFERRED`, `UNKNOWN`, `UNVERIFIED`, and `PARTIAL` as real
-  states.
+- Treat `UNKNOWN`, `UNVERIFIED`, `PARTIAL`, and any explicitly owner-held
+  release metadata as real states.
 
 ## Disputes
 

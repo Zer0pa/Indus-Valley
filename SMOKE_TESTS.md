@@ -1,21 +1,23 @@
 # Smoke Tests
 
-## Current starter smoke path
+## Current smoke path
 
-The repo does not yet claim a full extracted runtime. The current smoke path is
-therefore limited to starter integrity:
+The repo has a first extracted runtime slice under
+`src/gnosis_indus/search_surface/`. The current smoke path verifies both basic
+package integrity and the Phase 02 search-without-decode replay surface:
 
 ```bash
 python -m compileall src
-python -c "import gnosis_indus; print(gnosis_indus.__version__)"
-test -f AUTHORITY_SNAPSHOT.md
-test -f PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md
-test -f docs/family/INDUS_EXPORT_CONTRACT.md
+pip install -e ".[test,numerics]"
+python tools/indus_ops_gate.py --pretty
+pytest -q
 ```
 
 ## What this establishes
 
-- the starter package imports
+- the package imports
+- the Indus source-boundary and leakage gate passes
+- the search runtime reproduces the authority-anchored demo fixture
 - the authority and contract surfaces are present
 - the staged repo can be handed to another agent without missing core docs
 

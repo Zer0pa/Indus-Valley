@@ -10,7 +10,7 @@ map, not a marketing deck.
 | Layer | What Lives Here | Source Of Truth |
 | --- | --- | --- |
 | Public docs | front door, authority snapshot, boundaries, release posture | `README.md`, `AUTHORITY_SNAPSHOT.md`, root boundary docs |
-| Code or runtime | starter package root and later extracted modules | `src/gnosis_indus/` |
+| Code or runtime | first search-without-decode runtime slice and later extraction targets | `src/gnosis_indus/`, `tests/` |
 | Evidence artifacts | copied review-pack and paper verdicts | `authority/` |
 | Downstream contracts | export semantics and bundle boundaries | `docs/family/INDUS_EXPORT_CONTRACT.md` |
 | Owner-held or external context | image sets, corpora, final release metadata | `DATA_POLICY.md` |
@@ -20,9 +20,9 @@ map, not a marketing deck.
 | Component | Responsibility | Inputs | Outputs | Notes |
 | --- | --- | --- | --- | --- |
 | Authority bundle | preserve carried-forward verdict surfaces | copied markdown docs | reviewable repo-local evidence | not to be paraphrased in place |
-| Starter package root | future landing zone for extracted runtime | later source extraction from `scripts/indus/` | installable namespace | currently minimal |
+| Search runtime slice | clean-room implementation of the admitted search-without-decode surface | authority search demo summary + demo fixture | installable `gnosis_indus.search_surface` API | current CI replay path |
 | Boundary docs | freeze migration, source, and data posture | PRD plus authority docs | auditable repo posture | sovereign for staged extraction |
-| Search application surface | future in-repo query layer | admitted catalogue bundle | in-repo search tooling | not a separate repo boundary |
+| Later extraction targets | Phase 4 catalogue and Phase 5 falsification runtime families | `_internal/MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md` | future `catalogue/` and `falsification/` modules | rights and fetch boundaries stay visible |
 
 ## Authority Artifacts
 
@@ -44,5 +44,6 @@ map, not a marketing deck.
 
 ## Known Gaps
 
-- the repo does not yet carry a real extracted runtime beyond the starter package
+- the repo carries only the first search-without-decode runtime slice
+- the Phase 4 catalogue and Phase 5 falsification runtime families remain later extraction waves
 - large data and image assets are intentionally not vendored into this scaffold

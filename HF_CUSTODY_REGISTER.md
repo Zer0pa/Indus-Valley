@@ -1,9 +1,9 @@
 # Hugging Face Custody Register — Indus-Valley
 
-**As of:** 2026-04-27 (Wave 6 — post-mirror verification + migration-pack durability)
+**As of:** 2026-04-28 (repo-docs coherence review after Wave 6)
 **Token identity verified:** `Architect-Prime` (org membership `Zer0pa`)
 **Scope:** off-machine durable storage for the entire Indus lane workspace
-(`/Users/zer0palab/Gnosis Portfolio/workstreams/gnosis-indus/` in full,
+(`<LOCAL_INDUS_WORKSPACE>` in full,
 including the migration-package context outside `05_repo_scaffold/`)
 **Working assumption:** the local Mac is unstable and may become
 unrecoverable at any moment. Every artifact of value for this lane
@@ -27,6 +27,11 @@ Per `GNOSIS_HF_STORAGE_EXECUTION_BRIEF_2026-04-26.md` §1.2 plus the
 surface. `Architect-Prime/gnosis-indus-*` is the canonical durable
 backup.
 
+**Current GitHub note:** GitHub `main` advanced to `1f1529ce40a9` in the
+2026-04-28 public-refresh wave. The AP HF mirror below is still the durable
+backup register for the last verified HF sync; use GitHub as the preferred
+recovery source unless a later HF resync updates this register.
+
 ## Canonical AP register (live)
 
 ### `Architect-Prime/gnosis-indus-artifacts`
@@ -42,7 +47,7 @@ backup.
 | **Holds** | full source + state + workspace artifact backup; everything required to reproduce the lane without local-Mac access. |
 | **Rights class** | derived integer IDs and cluster sequences only; no image bytes admitted; `BLOCKED_RIGHTS` material excluded. |
 | **Consuming GitHub repo** | `Zer0pa/Indus-Valley` |
-| **GitHub HEAD at last sync** | `023a14e91155637d8246262e79a00bab299975cc` |
+| **GitHub HEAD at last verified HF sync** | pre-public-refresh source mirror; verify exact archive name and SHA against the AP repo `MANIFEST.txt` before HF-only recovery |
 
 ### `Architect-Prime/gnosis-indus-models`
 
@@ -99,6 +104,11 @@ pytest -q       # expected: 14 passed
 
 **From Architect-Prime HF (Mac dies + GitHub disrupted):**
 
+First inspect `Architect-Prime/gnosis-indus-artifacts::MANIFEST.txt` and choose
+the newest `Indus-Valley-source-*.tar.gz` listed there. The example below shows
+the pre-public-refresh source mirror shape and must be updated after the next HF
+resync.
+
 ```bash
 pip install huggingface_hub
 python3 -c "
@@ -106,11 +116,11 @@ from huggingface_hub import hf_hub_download
 p = hf_hub_download(
     repo_id='Architect-Prime/gnosis-indus-artifacts',
     repo_type='dataset',
-    filename='Indus-Valley-source-023a14e91155.tar.gz',
+    filename='<INDUS_SOURCE_ARCHIVE_FROM_MANIFEST>',
 )
 print(p)"
-tar xzf Indus-Valley-source-023a14e91155.tar.gz
-cd Indus-Valley-023a14e91155
+tar xzf <INDUS_SOURCE_ARCHIVE_FROM_MANIFEST>
+cd <EXTRACTED_INDUS_SOURCE_DIR>
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -e '.[test,numerics]'
 pytest -q       # expected: 14 passed

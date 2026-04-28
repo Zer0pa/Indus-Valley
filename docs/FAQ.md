@@ -19,8 +19,11 @@ useful in-repo search application surface, and the current paper verdict stack.
 
 ## What is still unknown or deferred?
 
-The final public license, final contact surface, public image-bearing release
-rights, and the first clean extracted runtime slice are still unresolved.
+Public image-bearing release rights, full-catalogue redistribution rights, and
+release-wording review for any visibility change remain unresolved. The code
+and documentation license posture has landed, and the first
+search-without-decode runtime slice is present under
+`src/gnosis_indus/search_surface/`.
 
 ## Why does public documentation mention audit limits?
 

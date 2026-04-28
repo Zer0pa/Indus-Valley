@@ -11,7 +11,7 @@ application surfaces exported from `gnosis-indus`.
 | --- | --- | --- |
 | `catalogue_bundle` | catalogue summary, governing verdict, route-selection summary, stability summary, replay summary | must preserve the Phase 4 stability caveat |
 | `falsification_bundle` | Phase 5 governing verdict plus comparison summaries | must preserve non-decipherment and substrate indistinguishability |
-| `search_application_bundle` | search demo summary plus any future search interface docs | belongs inside `gnosis-indus`, not as a separate sovereign repo; first real bundle expected in Phase 02 (per `MIGRATION_PLAN.md`) |
+| `search_application_bundle` | search demo summary plus the current `src/gnosis_indus/search_surface/` interface docs | belongs inside `gnosis-indus`, not as a separate sovereign repo; first real bundle landed in Phase 02 (per `_internal/MIGRATION_PLAN.md`) |
 | `paper_bundle` | paper verdicts and later admitted source files | paper posture cannot overrule the repo's public caveats |
 
 ## Minimum semantic rules

@@ -67,7 +67,7 @@ monorepo tribal knowledge and without narrative inflation.
 | --- | --- | --- | --- |
 | Sovereign repo PRD | document | `gnosis-indus` | `PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md` |
 | Authority snapshot | document | `gnosis-indus` | `AUTHORITY_SNAPSHOT.md` |
-| Boundary docs | documents | `gnosis-indus` | `MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, `TODO.md` |
+| Boundary docs | documents | `gnosis-indus` | `_internal/MIGRATION_PLAN.md`, `SOURCE_BOUNDARY.md`, `DATA_POLICY.md`, GitHub Issues #1-#3 |
 | Repo doc surface | documents | `gnosis-indus` | root docs plus `docs/` |
 | Minimal package root | code scaffold | `gnosis-indus` | `src/gnosis_indus/` |
 | Export contract | document | `gnosis-indus` | `docs/family/INDUS_EXPORT_CONTRACT.md` |
@@ -198,13 +198,13 @@ The staged repo is incomplete until it contains:
 - `AGENTS.md`
 - `AUTHORITY_SNAPSHOT.md`
 - `PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md`
-- `MIGRATION_PLAN.md`
+- `_internal/MIGRATION_PLAN.md`
 - `SOURCE_BOUNDARY.md`
 - `DATA_POLICY.md`
-- `TODO.md`
+- ~~`TODO.md`~~ (converted to GitHub Issues #1-#3 in the 2026-04-28 public-refresh wave)
 - `docs/family/INDUS_EXPORT_CONTRACT.md`
 - `.gpd/` control-plane surfaces
-- `NOTICE.md` (controlling license posture until legal decides)
+- `NOTICE` (Apache-2.0 code and CC-BY-4.0 docs posture plus data/trademark boundary notes)
 - `HF_CUSTODY_REGISTER.md` (off-repo custody truth)
 - ~~`PRIVATE_PROVENANCE_APPENDIX.md`~~ (removed 2026-04-28 public-refresh; symbolic-label decode held in operator runbook only)
 
@@ -213,7 +213,7 @@ The staged repo is incomplete until it contains:
 ### 8.1 Currently open
 
 - data-rights and provenance gap for image-bearing release
-- owner-deferred license and public contact details
+- release wording review for any public visibility change
 
 ### 8.2 Closed in Phase 02
 
@@ -225,3 +225,5 @@ The staged repo is incomplete until it contains:
 - no clean-machine replay path yet — closed by
   `pip install -e .[test] && pytest -q` (14 passed; independently
   confirmed on RunPod pod from fresh clone)
+- code/docs license posture — closed by Apache-2.0 for code and CC-BY-4.0
+  for documentation, reports, and written materials

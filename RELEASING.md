@@ -21,6 +21,11 @@ required to ship, the release is not ready.
 - `PUBLIC_AUDIT_LIMITS.md` still matches the repo's actual evidence and rights posture.
 - `docs/ARCHITECTURE.md` reflects the actual repo structure.
 - `SMOKE_TESTS.md` passes.
+- `tools/indus_ops_gate.py --pretty` passes.
+- GitHub Actions installs the pinned private `gnosis-ops-gates` package and
+  runs the Ops-Gates consumer smoke before the Indus repo-local gate.
+- Repository secret `OPS_GATES_READ_TOKEN` exists for read access to the
+  private `Gnosis-Ops-Gates` dependency.
 - release notes do not reintroduce decipherment or standalone search claims.
 
 ## Live Sync Sequence
@@ -32,7 +37,9 @@ required to ship, the release is not ready.
 
 ## Current release metadata posture
 
-- Versioning scheme: semantic versioning once runtime extraction starts
-- Release notes location: `CHANGELOG.md` once created
-- License identity: `OWNER_DEFERRED`
+- Versioning scheme: semantic versioning after the staged `0.0.0` surface is
+  promoted beyond the first search runtime slice
+- Release notes location: `CHANGELOG`
+- License identity: Apache-2.0 for code; CC-BY-4.0 for documentation, reports,
+  and written materials
 - Downstream compatibility promise: none beyond the documented starter contract

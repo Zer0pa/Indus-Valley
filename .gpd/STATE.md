@@ -11,10 +11,10 @@ scientific caveats that justify the lane?
 end-to-end: front door (`README.md`), authority snapshot
 (`AUTHORITY_SNAPSHOT.md`), PRD §8, TODO, and init checklist all
 agree with the post-Phase-02 reality. Two of four PRD §8 promotion
-blockers are closed (extracted runtime, clean-machine replay) and
-two remain owner-bound and visible (image rights, owner-deferred
-license/contact). The staged scaffold is promotion-ready up to its
-admitted limits.
+blockers are closed (extracted runtime, clean-machine replay), the
+2026-04-28 public-refresh wave closed code/docs licensing, and the
+remaining blockers are rights/provenance and release-wording review.
+The staged scaffold is promotion-ready up to its admitted limits.
 
 ## Current Position
 
@@ -29,9 +29,9 @@ audit. README "Current Gaps" + new "Replay" section reflect the
 landed search_surface slice and the real `pip install -e .[test]
 && pytest -q` (14 passed) command. `AUTHORITY_SNAPSHOT.md`
 "Promotion blockers still visible" and PRD §8 split into
-"Currently open" (2 items: image rights, owner-deferred license/
-contact) and "Closed in Phase 02" (2 items: extracted standalone
-runtime → `src/gnosis_indus/search_surface/`; clean-machine replay
+"Currently open" (rights/provenance and release-wording review) and
+"Closed in Phase 02" (2 items: extracted standalone runtime →
+`src/gnosis_indus/search_surface/`; clean-machine replay
 → pytest suite confirmed on RunPod from fresh clone). TODO and
 WORKSTREAM_GPD_INIT_CHECKLIST.md updated. No PRD §1.3 falsification
 condition triggered. All ten PRD §7 artifact contract files exist
@@ -85,8 +85,10 @@ that cannot be removed locally or on admitted surfaces.
 
 ## Open Questions
 
-- What final release metadata will the owner supply? (license text and
-  public contact remain `OWNER_DEFERRED`.)
+- What exact release wording should accompany any future public visibility
+  change?
+- Which image-bearing and full-catalogue families can be cleared by a later
+  rights/provenance review?
 
 _(Resolved: "Which derived artifacts are safe to vendor before a fetch
 manifest exists?" — answered by Phase 02. The bundled
@@ -136,7 +138,8 @@ the full 412-sign / 70-cluster / 179-inscription catalogue stay
 
 ### Propagated Uncertainties
 
-- final license and public contact are owner-deferred
+- public visibility remains gated by rights/provenance and release wording, not
+  by missing code/docs license text
 - runtime dependency list for the first slice is frozen at "stdlib only"
   for the search_surface package; numpy is exposed as an optional
   extra (`gnosis-indus[numerics]`) for later latency tuning but is not
@@ -149,13 +152,13 @@ they are explicitly out of scope for this PRD; they belong to later
 extraction waves outside the current contract:
 
 - extract the first clean Phase 4 runtime slice into
-  `src/gnosis_indus/catalogue/` (next wave; `MIGRATION_PLAN.md`,
+  `src/gnosis_indus/catalogue/` (next wave; `_internal/MIGRATION_PLAN.md`,
   `SOURCE_BOUNDARY.md`)
 - extract the first clean Phase 5 runtime slice into
-  `src/gnosis_indus/falsification/` (next wave; `MIGRATION_PLAN.md`)
+  `src/gnosis_indus/falsification/` (next wave; `_internal/MIGRATION_PLAN.md`)
 - add fetch manifests for the image and full-catalogue families that
   cannot ship now (`DATA_POLICY.md`, owner-bound for image rights)
-- replace `OWNER_DEFERRED` license text and public contact (owner-bound)
+- decide final release wording for any future public visibility change
 
 ### Blockers/Concerns
 
@@ -170,5 +173,6 @@ extraction waves outside the current contract:
 **Last session:** `2026-04-24T00:00:00Z`
 **Stopped at:** PRD complete; staged scaffold is promotion-ready up
 to its admitted limits (two PRD §8 blockers closed by Phase 02; two
-remain owner-bound and visible in `AUTHORITY_SNAPSHOT.md` and PRD §8).
+remain rights/provenance and release-wording blockers visible in
+`AUTHORITY_SNAPSHOT.md` and PRD §8).
 **Resume file:** `PRD_GNOSIS_INDUS_ANCHOR_APPLICATION.md`

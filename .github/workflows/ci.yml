@@ -43,6 +43,31 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e '.[test,numerics]'
 
+      - name: Install pinned Gnosis Ops-Gates
+        env:
+          OPS_GATES_READ_TOKEN: ${{ secrets.OPS_GATES_READ_TOKEN }}
+        run: |
+          test -n "$OPS_GATES_READ_TOKEN"
+          git config --global url."https://x-access-token:${OPS_GATES_READ_TOKEN}@github.com/".insteadOf "https://github.com/"
+          trap 'git config --global --unset-all url."https://x-access-token:${OPS_GATES_READ_TOKEN}@github.com/".insteadOf || true' EXIT
+          python -m pip install \
+            "gnosis-ops-gates @ git+https://github.com/Zer0pa/Gnosis-Ops-Gates.git@43ff5ba310772cc7a365a07ed9ac27f0ee0c10f2#subdirectory=code"
+
+      - name: Ops-Gates consumer smoke
+        run: |
+          python - <<'PY'
+          import importlib.metadata as md
+          from gnosis_ops_gates.preflight.check_repo_truth import REQUIRED_PATHS_BY_PROFILE
+
+          assert md.version("gnosis-ops-gates")
+          assert set(REQUIRED_PATHS_BY_PROFILE) == {"parent-monorepo", "standalone-module"}
+          print("gnosis-ops-gates consumer smoke passed")
+          PY
+
+      - name: Run Indus operational gate
+        run: |
+          python tools/indus_ops_gate.py --pretty
+
       - name: Run repo-truth test suite
         run: |
           pytest -q
