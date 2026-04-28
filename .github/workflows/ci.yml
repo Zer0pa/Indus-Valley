@@ -45,9 +45,12 @@ jobs:
 
       - name: Install pinned Gnosis Ops-Gates
         env:
-          OPS_GATES_READ_TOKEN: ${{ secrets.OPS_GATES_READ_TOKEN }}
+          OPS_GATES_READ_TOKEN: ${{ secrets.OPS_GATES_READ_TOKEN || secrets.GNOSIS_OPS_GATES_READ_TOKEN }}
         run: |
-          test -n "$OPS_GATES_READ_TOKEN"
+          if [ -z "${OPS_GATES_READ_TOKEN:-}" ]; then
+            echo "::error::OPS_GATES_READ_TOKEN or GNOSIS_OPS_GATES_READ_TOKEN is required to consume the internal Gnosis-Ops-Gates gate bundle."
+            exit 1
+          fi
           git config --global url."https://x-access-token:${OPS_GATES_READ_TOKEN}@github.com/".insteadOf "https://github.com/"
           trap 'git config --global --unset-all url."https://x-access-token:${OPS_GATES_READ_TOKEN}@github.com/".insteadOf || true' EXIT
           python -m pip install \
