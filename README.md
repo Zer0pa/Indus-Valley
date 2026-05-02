@@ -1,54 +1,10 @@
 # Gnosis Indus Atlas
 
-> Anchor application and evidence repo for the Indus lane.
-> Useful now, improving without overclaim.
-
----
-
-**This is a live window into the Zer0pa lab.** None of the work in this repo is a final release. Zer0pa GitHub repos are open as a matter of course for visibility and community participation. Always-in-beta is the posture: useful now, improving continuously. Open gates and honest blockers are surfaced in plain text below — see `## What We Don't Claim` and `## Upcoming Workstreams`.
-
----
-
-## Licensing
-
-This repository is part of the Zer0pa Gnosis Portfolio.
-
-**Code** in this repository is licensed under the Apache License 2.0. See
-`LICENSE` for the full text. SPDX identifier: `Apache-2.0`.
-
-**Documentation, reports, and written materials** are licensed under Creative
-Commons Attribution 4.0 International. SPDX identifier: `CC-BY-4.0`. Canonical
-terms: <https://creativecommons.org/licenses/by/4.0/>.
-
-**Data and fixtures** are handled per dataset and artifact family. See
-`DATA_POLICY.md` for this repository's data boundary. The code license does not
-license raw corpora, image-bearing cultural-heritage assets, private HF
-artifacts, model weights, endpoint logs, or operational transcripts.
-
-**Trademarks** - "Gnosis", "Zer0pa Gnosis", and distinctive sub-marks are
-trademarks of Zer0pa. Apache-2.0 and CC-BY-4.0 do not grant trademark rights.
-See `TRADEMARKS.md`.
-
-Public visibility is a separate repository-setting action. The license files in
-this repo define the intended open-source/open-documentation terms for released
-Gnosis code and written materials; they do not publish rights-gated data.
-
-
-## Traditional-Knowledge Acknowledgment
-
-This repository works with material originating from the Indus Valley
-Civilization, including the undeciphered Indus script. Zer0pa claims no
-proprietary right over the Indus script, its imagery, or the archaeological
-record.
-
-Zer0pa's work is the computational analysis, lattice methods, and falsification
-discipline applied to that material. This repository does not claim a definitive
-decipherment of any Indus sign or sequence.
-
-Good-faith inquiries from identified communities, governmental antiquity
-authorities, or institutional bodies may be sent to architects@zer0pa.ai.
+> Anchor application and evidence repo for the Indus lane. Useful now, improving without overclaim.
 
 ## What This Is
+
+Indus-Valley is a non-decipherment Gnosis lane: conditional k=70 catalogue, search-without-decode runtime, and rights gates explicit.
 
 Gnosis applied-research repo for the Indus-script lane. It packages
 the carried-forward evidence chain around the Indus morphological
@@ -84,6 +40,53 @@ per `DATA_POLICY.md`; the full k=70 catalogue (412 signs / 70 clusters
 small and authority-anchored to
 `authority/review_pack/search_demo_summary.md`.
 
+## Method Mechanics
+
+| Field | Value |
+| --- | --- |
+| Architecture | GNOSIS_INDUS_SEARCH_WITHOUT_DECODE |
+| Method | Conditional k=70 catalogue plus clean-room cluster-sequence search |
+| Runtime | `src/gnosis_indus/search_surface/` |
+| Data Boundary | sign images `BLOCKED_RIGHTS`; full k=70 catalogue `FETCH_EXTERNAL` |
+| Cultural Boundary | traditional-knowledge acknowledgement retained below |
+| Non-Claim | no decipherment and no proven substrate identification |
+
+## Key Metrics
+
+| Metric | Value | Baseline |
+| --- | --- | --- |
+| Conditional catalogue | 412 signs / 70 clusters / 179 inscriptions | NMI 0.5793 against ICIT Sets; sigma 5.65 |
+| Search compression | 5.89x catalogue compression | Track C search-without-decode |
+| Query latency | 0.0451 ms max | 100 ms authority-doc gate |
+| Pytest surface | 14 passed | clean Python 3.11 replay |
+
+> Source: `authority/review_pack/phase4_governing_verdict.md`, `authority/review_pack/indus_catalogue_summary.md`, `authority/review_pack/search_demo_summary.md`, and `.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md`.
+
+## Repo Identity
+
+| Field | Value |
+| --- | --- |
+| Identifier | Indus-Valley |
+| Repository | https://github.com/Zer0pa/Indus-Valley |
+| Portfolio | Gnosis |
+| Visibility | PUBLIC |
+| Default Branch | main |
+| Authority Source | `authority/review_pack/` + `.gpd/phases/` |
+| License | Apache-2.0 code; CC-BY-4.0 docs; data per `DATA_POLICY.md` |
+
+## Readiness
+
+| Field | Value |
+| --- | --- |
+| Evidence posture | staged runtime scaffold; not a portfolio verdict |
+| Posture | `rights_gated_data_classes_image_blocked_text_fetch_external` |
+| Checks | 14 pytest checks and Phase 03 verification pass |
+| Authority | `DATA_POLICY.md`; `authority/review_pack/search_demo_summary.md` |
+
+### Honest Blocker
+
+Image rights and full-catalogue redistribution gates remain open. Sign images stay `BLOCKED_RIGHTS`, and the full k=70 catalogue stays `FETCH_EXTERNAL`.
+
 ## What We Prove
 
 - The lane is migrated out of the original monorepo as a standalone,
@@ -117,33 +120,37 @@ small and authority-anchored to
   full k=70 catalogue (412 signs, 70 clusters, 179 inscriptions) stays
   `FETCH_EXTERNAL` per `DATA_POLICY.md`.
 
-## Tests and Verification
+## Verification Status
 
-| Surface | Status |
-| --- | --- |
-| `pytest -q` (Python 3.11) | `14 passed` (≈0.03 s local, ≈0.3 s on RunPod from fresh clone) |
-| `python -m compileall src` | passes |
-| Per-phase verification reports | `.gpd/phases/0{1,2,3}-*/VERIFICATION.md` (all PASS, latest 10/10 confidence) |
-| GitHub Actions CI | wired in `.github/workflows/ci.yml` (boring CI: install + pytest, no external fetches) |
-| Operational endpoint leak scan | 0 matches across all tracked surfaces |
-| Falsification battery (PRD §1.3) | all four conditions hold (k=70 caveat preserved; no decipherment language; search not reframed as sovereign repo; no image-rights inflation) |
+| Code | Check | Verdict |
+| --- | --- | --- |
+| V_01 | `pytest -q` on Python 3.11: 14 passed | PASS |
+| V_02 | `python -m compileall src` | PASS |
+| V_03 | Per-phase verification reports all PASS | PASS |
+| V_04 | Operational endpoint leak scan: 0 matches | PASS |
+| V_05 | Image rights and full catalogue redistribution | BLOCKED |
 
 ## Proof Anchors
 
-| Claim | Evidence |
+| Path | State |
 | --- | --- |
-| Phase 4 conditional catalogue at k=70 with stability caveat | `authority/review_pack/phase4_governing_verdict.md`, `authority/review_pack/indus_catalogue_summary.md` |
-| Phase 5 linguistic-structure-without-decipherment | `authority/review_pack/phase5_governing_verdict.md` |
-| Paper 1 (DSH-ready) and Paper 2 (held until Paper 1 submission) verdicts | `authority/papers/paper1_governing_verdict_v2.md`, `authority/papers/paper2_governing_verdict.md` |
-| Search-without-decode functional spec (API + latency/compression gates + 10 query ground-truth records) | `authority/review_pack/search_demo_summary.md` |
-| Clean-room runtime reproducing the spec | `src/gnosis_indus/search_surface/{__init__,catalogue,engine,_fixture}.py` |
-| Authority-anchored demo fixture | `artifacts/phase4/indus_catalogue_demo_fixture.json` (every row traced verbatim to a line in the authority doc; see `artifacts/phase4/README.md`) |
-| Phase 02 verification (10/10) | `.gpd/phases/02-extraction-and-minimal-replay-surface/VERIFICATION.md` |
-| Phase 03 verification (10/10, PRD complete) | `.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md` |
-| Decision log (six rows, each with rollback trigger) | `.gpd/DECISIONS.md` |
-| Off-repo custody register | `HF_CUSTODY_REGISTER.md` |
+| `authority/review_pack/phase4_governing_verdict.md` | VERIFIED |
+| `authority/review_pack/indus_catalogue_summary.md` | VERIFIED |
+| `authority/review_pack/phase5_governing_verdict.md` | VERIFIED |
+| `authority/review_pack/search_demo_summary.md` | VERIFIED |
+| `artifacts/phase4/indus_catalogue_demo_fixture.json` | VERIFIED |
+| `.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md` | VERIFIED |
 
 ## Repo Shape
+
+| Field | Value |
+| --- | --- |
+| Proof Anchors | 6 display anchors |
+| Portfolio | Gnosis |
+| Runtime | `src/gnosis_indus/search_surface/` |
+| Authority | `authority/review_pack/`; `.gpd/phases/` |
+| Data Boundary | `DATA_POLICY.md` |
+| Support Sections | Licensing; Traditional-Knowledge Acknowledgment; Quick Start; Current Gaps; Upcoming Workstreams |
 
 ```
 .
@@ -192,6 +199,44 @@ small and authority-anchored to
     └── workflows/ci.yml                   # boring CI: install + pytest
 ```
 
+## Licensing
+
+This repository is part of the Zer0pa Gnosis Portfolio.
+
+**Code** in this repository is licensed under the Apache License 2.0. See
+`LICENSE` for the full text. SPDX identifier: `Apache-2.0`.
+
+**Documentation, reports, and written materials** are licensed under Creative
+Commons Attribution 4.0 International. SPDX identifier: `CC-BY-4.0`. Canonical
+terms: <https://creativecommons.org/licenses/by/4.0/>.
+
+**Data and fixtures** are handled per dataset and artifact family. See
+`DATA_POLICY.md` for this repository's data boundary. The code license does not
+license raw corpora, image-bearing cultural-heritage assets, private HF
+artifacts, model weights, endpoint logs, or operational transcripts.
+
+**Trademarks** - "Gnosis", "Zer0pa Gnosis", and distinctive sub-marks are
+trademarks of Zer0pa. Apache-2.0 and CC-BY-4.0 do not grant trademark rights.
+See `TRADEMARKS.md`.
+
+Public visibility is a separate repository-setting action. The license files in
+this repo define the intended open-source/open-documentation terms for released
+Gnosis code and written materials; they do not publish rights-gated data.
+
+## Traditional-Knowledge Acknowledgment
+
+This repository works with material originating from the Indus Valley
+Civilization, including the undeciphered Indus script. Zer0pa claims no
+proprietary right over the Indus script, its imagery, or the archaeological
+record.
+
+Zer0pa's work is the computational analysis, lattice methods, and falsification
+discipline applied to that material. This repository does not claim a definitive
+decipherment of any Indus sign or sequence.
+
+Good-faith inquiries from identified communities, governmental antiquity
+authorities, or institutional bodies may be sent to architects@zer0pa.ai.
+
 ## Quick Start
 
 Reproduce the Phase 02 stronger smoke path on any clean Python 3.11
@@ -231,18 +276,6 @@ surfaces.
   superseded by the README Quick Start and the Phase 03 verification
   reports (`.gpd/phases/03-truth-preserving-packaging/VERIFICATION.md`),
   but the playbook itself awaits a maintenance refresh.
-
-## Commercial Readiness
-
-| Field | Value |
-| --- | --- |
-| **Evidence posture** | staged runtime scaffold; not a portfolio verdict |
-| **Posture** | `rights_gated_data_classes_image_blocked_text_fetch_external` |
-
-The runtime and test surface are functional and reproducible from a fresh clone.
-Image-rights and full-catalogue redistribution gates remain open; those are
-explicit, not hidden. The staged posture reflects a production-quality scaffold,
-not clearance for all data releases.
 
 ## Upcoming Workstreams
 
