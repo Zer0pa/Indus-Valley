@@ -63,12 +63,14 @@ landing zones for working artifacts are:
 
 | Surface | Locator | Scope | Rights posture |
 | --- | --- | --- | --- |
-| HF dataset repo | `Zer0pa/gnosis-indus-artifacts` (private) | derived Phase 4/5 artifacts, evaluation outputs, intermediate derived JSON | private; no public redistribution until rights are cleared |
-| HF model repo | `Zer0pa/gnosis-indus-models` (private) | model checkpoints produced by runtime extractions | private; weights remain scoped to the lane |
+| HF dataset repo | `Architect-Prime/gnosis-indus-artifacts` (private) | derived Phase 4/5 artifacts, evaluation outputs, intermediate derived JSON, and durable source/workspace backups | private; no public redistribution until rights are cleared |
+| HF model repo | `Architect-Prime/gnosis-indus-models` (private) | model checkpoints produced by runtime extractions | private; weights remain scoped to the lane |
 | RunPod workspace | `/workspace/gnosis-indus-env/repo` on pod `<RUNPOD_POD>` | ephemeral compute staging for extraction and smoke paths | scratch; anything promoted back to this repo must pass `DATA_POLICY` classification |
 
 `FETCH_EXTERNAL` families are fetched from their canonical upstream homes and
-never mirrored into `Zer0pa/gnosis-indus-artifacts` unless a fetch manifest
-records the provenance and rights decision.
+never mirrored into private HF storage unless a fetch manifest records the
+provenance and rights decision. Per `HF_CUSTODY_REGISTER.md`, deleted
+`Zer0pa/gnosis-indus-*` HF repos are historical only and are not active custody
+surfaces for this lane.
 
 `BLOCKED_RIGHTS` families never land on any of the above surfaces.

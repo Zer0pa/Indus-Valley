@@ -59,6 +59,15 @@ search-without-decode application surface implemented in this repo as
 the first runtime slice. It is not a decipherment repo, not a generic
 search product, and not the portfolio's lead thesis.
 
+**Strongest current evidence surface:** Phase 4 admits a conditional
+412-sign / 70-cluster catalogue over 179 inscriptions with NMI 0.5793
+against ICIT Sets and sigma 5.65. Track C then demonstrates
+search-without-decode over cluster sequences with 5.89x catalogue
+compression and 0.0451 ms max query latency. Proof paths:
+`authority/review_pack/phase4_governing_verdict.md`,
+`authority/review_pack/indus_catalogue_summary.md`, and
+`authority/review_pack/search_demo_summary.md`.
+
 **Headline metric:** `pytest -q → 14 passed` (≈0.03 s local, ≈0.3 s
 on RunPod from fresh clone). The clean-room search-without-decode
 runtime (`src/gnosis_indus/search_surface/`) reproduces 6
@@ -227,13 +236,13 @@ surfaces.
 
 | Field | Value |
 | --- | --- |
-| **Verdict** | `STAGED` |
+| **Evidence posture** | staged runtime scaffold; not a portfolio verdict |
 | **Posture** | `rights_gated_data_classes_image_blocked_text_fetch_external` |
 
 The runtime and test surface are functional and reproducible from a fresh clone.
 Image-rights and full-catalogue redistribution gates remain open; those are
-explicit, not hidden. `STAGED` reflects: production-quality scaffold, not yet
-cleared for all data releases.
+explicit, not hidden. The staged posture reflects a production-quality scaffold,
+not clearance for all data releases.
 
 ## Upcoming Workstreams
 
