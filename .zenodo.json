@@ -1,0 +1,34 @@
+{
+  "title": "Gnosis Indus Atlas",
+  "description": "Anchor application and evidence repository for the Indus-Valley lane of the Zer0pa Gnosis Portfolio. Packages a clean-room search-without-decode runtime, Phase 4 conditional morphological catalogue (k=70, with stability caveat), Phase 5 non-decipherment falsification posture, and the paper verdict stack. No decipherment of the Indus script is claimed or intended.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "creators": [
+    {
+      "name": "Zer0pa-Architect-Prime",
+      "affiliation": "Zer0pa"
+    }
+  ],
+  "keywords": [
+    "indus-valley",
+    "indus-script",
+    "non-decipherment",
+    "falsification",
+    "search-without-decode",
+    "gnosis",
+    "zer0pa",
+    "methodology",
+    "archaeology",
+    "traditional-knowledge"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Zer0pa/Indus-Valley",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Phase 4 conditional catalogue (k=70) and Phase 5 non-decipherment posture are the authority evidence surfaces. Image rights and full catalogue redistribution are not yet cleared (BLOCKED_RIGHTS in DATA_POLICY.md). The bundled fixture is small and authority-anchored."
+}

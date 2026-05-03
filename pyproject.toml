@@ -1,14 +1,23 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "gnosis-indus"
-version = "0.0.0"
+version = "0.1.0"
 description = "Staged anchor application and evidence repo for the Gnosis Indus Atlas lane."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing :: Linguistic",
+]
 # The Phase 02 search_surface slice is pure stdlib. numpy is exposed as
 # an optional extra so later latency tuning can lean on it without
 # forcing it on every consumer.
@@ -17,6 +26,11 @@ dependencies = []
 [project.optional-dependencies]
 numerics = ["numpy>=1.24"]
 test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://zer0pa.ai/gnosis/Gnosis-Indus-Valley/"
+Source = "https://github.com/Zer0pa/Indus-Valley"
+"Issue Tracker" = "https://github.com/Zer0pa/Indus-Valley/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
