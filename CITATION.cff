@@ -13,7 +13,7 @@ authors:
     alias: "@Architect-Prime"
 repository-code: "https://github.com/Zer0pa/Indus-Valley"
 license: Apache-2.0
-version: "0.1.0-staged"
+version: "0.0.0"
 date-released: "2026-04-28"
 keywords:
   - indus-valley
