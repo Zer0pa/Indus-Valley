@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gnosis-indus"
-version = "0.0.0"
+version = "0.1.0"
 description = "Staged anchor application and evidence repo for the Gnosis Indus Atlas lane."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -13,7 +13,6 @@ license-files = ["LICENSE"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Topic :: Scientific/Engineering",
