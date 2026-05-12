@@ -346,3 +346,97 @@ either surface.
 | `95098c2a8523` | lane orchestration state (`lane-asks/2026-05-12/`) |
 | `d9a96665abf5` | `WAVE7_MANIFEST.md` |
 | `bc9286b006ce` | `WAVE7_CHECKSUMS.sha256` (HEAD) |
+
+---
+
+## Wave 8 update — 2026-05-12
+
+**Trigger:** urgent storage / auth / cleanup brief — multi-agent
+durability sweep ahead of a potential local-Mac reformat. The
+2026-04-27 direction "no Zer0pa-org HF storage for this lane" is
+**superseded** by the 2026-05-12 brief: "USE THE ORGANIZATION
+STORAGE ALLOCATION UNLESS IT IS FULL/FILLING. Privacy/internal or
+public status should mirror the GitHub repo's status."
+
+**Token identity verified:** `Architect-Prime` (org `Zer0pa`) via
+`hf auth whoami`. HF token name: `Live Project Storage`.
+
+**Visibility decision:** `Zer0pa/Indus-Valley` is **public** on
+GitHub, so the canonical HF mirror is **public**. No `BLOCKED_RIGHTS`
+content is admitted (rights class unchanged from Waves 5–7: derived
+integer IDs and cluster sequences only; no image bytes; full
+catalogue stays `FETCH_EXTERNAL`).
+
+### New canonical lane mirror
+
+| Surface | Status |
+| --- | --- |
+| **`Zer0pa/Indus-Valley-lane-state`** (HF dataset, **public**) | **canonical from 2026-05-12 onward** |
+| `Architect-Prime/gnosis-indus-artifacts` (HF dataset, private) | retained as archival fallback; byte-identical to new canonical at end of Wave 8; **no longer authoritative** |
+| `Architect-Prime/gnosis-indus-models` (HF model, private) | **unchanged** — Stage-4 structural adapter stays here pending legal clearance per `NOTICE.md`; intentionally not migrated to org-public |
+| `Zer0pa/Indus-Valley` (GitHub, public) | unchanged — canonical authoring + CI surface |
+
+The new dataset is at
+[`Zer0pa/Indus-Valley-lane-state`](https://huggingface.co/datasets/Zer0pa/Indus-Valley-lane-state).
+It holds 155 files / ~7 MB and is rights-class-cleared end-to-end.
+
+### Migration scope
+
+Full byte-mirror of `Architect-Prime/gnosis-indus-artifacts` was
+uploaded to `Zer0pa/Indus-Valley-lane-state` via
+`hf upload-large-folder` (one consolidated commit). Wave-5
+(d6a8bb10) and Wave-7 (14c6b807) source tarballs are both retained
+for provenance. The browsable `repo/` mirror at GH HEAD `14c6b807`
+is intact. Workspace backups (`backups/2026-04-27/`), migration
+package (`migration-package/`), product-page build
+(`product-page-build/2026-05-12/`), and lane-asks orchestration
+(`lane-asks/2026-05-12/`) are all present.
+
+### Roundtrip integrity (post-push)
+
+| Artifact | SHA-256 (HF) | matches `WAVE7_CHECKSUMS.sha256` |
+| --- | --- | --- |
+| `Indus-Valley-source-14c6b807.tar.gz` | `c721027bf82f…` | ✓ |
+| `product-page-build/2026-05-12/index.html` | `babe51867ea8…` | ✓ (byte-equal to local) |
+| `product-page-build/2026-05-12/product-page-audit.json` | `b75a48d556d3…` | ✓ (byte-equal to local) |
+
+### Naming-convention alignment
+
+The new dataset follows the convention used by peer lanes
+(`Zer0pa/<LaneName>-lane-state`), seen in:
+`Zer0pa/ZPE-FT-lane-state`, `Zer0pa/ZPE-Geo-lane-state`,
+`Zer0pa/ZPE-Image-lane-state`, `Zer0pa/ZPE-Mocap-lane-state`,
+`Zer0pa/ZPE-Bio-lane-state`, `Zer0pa/ZPE-Ink-lane-state`.
+
+### Local-Mac wipe safety statement (Wave 8)
+
+The acceptance gate is now met: a Mac wipe leaves the lane fully
+recoverable from `Zer0pa/Indus-Valley` (GitHub) + `Zer0pa/Indus-Valley-lane-state`
+(HF) alone. No `Architect-Prime/*` access is required for recovery,
+though the private fallback remains available to org members.
+
+Reproduction:
+
+```bash
+gh auth login                              # Zer0pa-Architect-Prime
+hf auth login --token "$HF_TOKEN"          # Live Project Storage
+git clone https://github.com/Zer0pa/Indus-Valley.git
+hf download --repo-type dataset Zer0pa/Indus-Valley-lane-state \
+  --local-dir ./indus-valley-lane-state
+```
+
+### Wave-8 commits (HF dataset audit trail)
+
+| Commit (HF dataset HEAD) | Action |
+| --- | --- |
+| `36e0fc644de8…` | full mirror upload via `upload-large-folder`; 155 files; public dataset created and populated in one consolidated commit |
+
+### Open items (carry-forward, non-blocking)
+
+- §B `R5` governance-doc drift on `Zer0pa/Indus-Valley` main
+  (`RELEASING.md` / `FAQ` / `Architecture` / `.gpd/STATE.md` still
+  imply private/blocked while v0.1.0 is live). Surfaced for Repo
+  Orchestrator; not blocking durability.
+- The `Architect-Prime/gnosis-indus-artifacts` private archive can
+  be retired entirely at any later wave; current decision is to
+  retain as redundant backup until the next quota pass.
