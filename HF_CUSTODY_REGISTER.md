@@ -281,3 +281,68 @@ This register must be regenerated whenever:
 - any new HF repo is created for this lane (it should not be unless
   the orchestrator says otherwise);
 - the org membership or token identity changes.
+
+---
+
+## Wave 7 update — 2026-05-12
+
+**Trigger:** local Mac drive-wipe preparation; operator-instructed
+sweep of all post-Wave-5/6 Indus-Valley artifacts into the canonical
+AP HF dataset so the lane survives a full local reformat with zero
+project impact.
+
+**Token identity verified:** `Architect-Prime` (org `Zer0pa`) via
+`hf auth whoami` on the live HF Hub.
+
+**GitHub HEAD at sync:** `14c6b8078f64fa2f8fc56f881c2eb130ac2cb2ab`
+(2026-05-03T23:20:30Z — *PyPI Trusted Publishing + Zenodo readiness,
+v0.1.0 release*). This advances the prior Wave-5 sync HEAD
+`023a14e91155637d8246262e79a00bab299975cc` → through the v0.1.0
+packaging-fix sequence (`adf81d8b`, `269ffc7a`, `02a3a9e4`,
+`13238908`, `14c6b807`).
+
+### Files added or refreshed in `Architect-Prime/gnosis-indus-artifacts`
+
+| Path | Source | Disposition |
+| --- | --- | --- |
+| `Indus-Valley-source-14c6b807.tar.gz` | `gh api repos/Zer0pa/Indus-Valley/tarball/14c6b807` | **added** — Wave-7 authoritative source tarball; Wave-5 tarball `Indus-Valley-source-d6a8bb10fef8.tar.gz` preserved alongside for provenance |
+| `repo/` (browsable mirror) | tarball extracted | **overwritten** to Wave-7 HEAD `14c6b807`; 98 files; 72 byte-identical with Wave-5 (skipped), 26 changed (refreshed) |
+| `product-page-build/2026-05-12/` | `xr-product-page-build/gnosis-indus-valley/` on local Mac | **added** — Phase-1 static product page for the FPO Product-Page Wave (2026-05-09 dispatch), built off the locked ZPE-XR template: `index.html`, 5 PNG receipts (full · top · insight+benchmark · possibility · mobile-414), `product-page-audit.json`, README. Pretext active, 0 console errors, 0 non-live-green, 11 external placeholders held, no stale labels |
+| `lane-asks/2026-05-12/` | `/Users/Zer0pa/orchestration-state/lane-asks/Indus-Valley/` | **added** — lane handover document (`HANDOVER_2026-05-04.md`) and ask queue index (`INDEX.md`); orchestration state never previously placed in HF custody |
+| `WAVE7_MANIFEST.md` | composed locally | **added** — full Wave-7 description + reproduction recipe + local-Mac wipe safety statement |
+| `WAVE7_CHECKSUMS.sha256` | `shasum -a 256` over all wave-7 files | **added** — 108 lines covering every wave-7 file by SHA-256 |
+
+### Verification (post-push)
+
+- HF dataset `Architect-Prime/gnosis-indus-artifacts` total files: **153** (was 96 at end of Wave-6).
+- HF dataset used_storage: **7.10 MB** (was 5.61 MB at end of Wave-6).
+- HF dataset visibility: **private** (unchanged, must remain so per brief §1.3 + §8).
+- HF dataset HEAD SHA: `bc9286b006ce679e1a3c257e7bee5f67225c4235`.
+- HF model repo `Architect-Prime/gnosis-indus-models`: **unchanged** in Wave 7. No new model weights produced.
+- `Zer0pa/gnosis-indus-artifacts` / `Zer0pa/gnosis-indus-models`: **still deleted** (Wave-5 decommission stands; no Zer0pa-org HF storage created in Wave 7 per the operating brief).
+
+### Local-Mac wipe safety statement (Wave 7)
+
+After this wave, the following local paths can be deleted with
+**zero project impact** to the Indus-Valley lane:
+
+- `/Users/Zer0pa/Desktop/xr-product-page-build/gnosis-indus-valley/` → re-fetch from `Architect-Prime/gnosis-indus-artifacts::product-page-build/2026-05-12/`
+- `/Users/Zer0pa/orchestration-state/lane-asks/Indus-Valley/` → re-fetch from `Architect-Prime/gnosis-indus-artifacts::lane-asks/2026-05-12/`
+- `/Users/Zer0pa/Indus-Valley/` (if present) → re-fetch via `git clone https://github.com/Zer0pa/Indus-Valley.git`
+- `/Users/Zer0pa/front-door-execution-2026-05-02/Indus-Valley/` → re-fetch from `Architect-Prime/gnosis-indus-artifacts::backups/2026-04-27/indus_workspace_artifacts_2026-04-27.tar.zst` + `migration-package/`
+
+Anything not on **`Zer0pa/Indus-Valley` (GitHub)** *or* the canonical
+**`Architect-Prime/gnosis-indus-artifacts` (HF)** dataset is treated
+as discardable transient state. The lane is fully recoverable from
+either surface.
+
+### Wave-7 commits (HF dataset audit trail)
+
+| Commit | Action |
+| --- | --- |
+| `1aaf5510d61b` | source tarball upload |
+| `fa83b1017d96` | browsable `repo/` mirror refresh |
+| `79e33c9a2638` | product-page build (`product-page-build/2026-05-12/`) |
+| `95098c2a8523` | lane orchestration state (`lane-asks/2026-05-12/`) |
+| `d9a96665abf5` | `WAVE7_MANIFEST.md` |
+| `bc9286b006ce` | `WAVE7_CHECKSUMS.sha256` (HEAD) |
