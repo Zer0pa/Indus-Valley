@@ -75,7 +75,7 @@ surfaces.
 <table width="100%">
 <tr>
 <td width="50%" valign="top">
-<div><b>03 · VALUE</b></div>
+<div><b>03 · VALUE OF MARKET</b></div>
       <div><span>$8.1</span> <span>B</span></div>
       <div>Heritage digitization is funded. Tools that index this script by shape, without claiming to read it, remain <b>almost absent.</b></div>
 </td>
