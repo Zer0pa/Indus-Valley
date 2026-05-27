@@ -2,6 +2,30 @@
 
 ## Install / Developer Commands
 
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install gnosis-indus`.
+Current release: `0.1.0` on [PyPI](https://pypi.org/project/gnosis-indus/).
+Source: [Zer0pa/Indus-Valley](https://github.com/Zer0pa/Indus-Valley/).
+
+```bash
+python3.11 -m pip install gnosis-indus
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import gnosis_indus
+
+print("gnosis-indus", md.version("gnosis-indus"))
+PY
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.<!-- INSTALL-DX:END -->
+
 #### Quick Start
 
 Reproduce the Phase 02 stronger smoke path on any clean Python 3.11
