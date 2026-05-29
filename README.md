@@ -1,9 +1,6 @@
 # Indus-Valley
 
-## Install / Developer Commands
-
-<!-- INSTALL-DX:START -->
-#### Package Install
+## Package Install
 
 Installable package: `python3.11 -m pip install gnosis-indus`.
 Current release: `0.1.0` on [PyPI](https://pypi.org/project/gnosis-indus/).
@@ -13,39 +10,9 @@ Source: [Zer0pa/Indus-Valley](https://github.com/Zer0pa/Indus-Valley/).
 python3.11 -m pip install gnosis-indus
 ```
 
-Import smoke:
+For full install, smoke, source, and developer commands, [click here](#install-developer-commands-detailed).
 
-```bash
-python3.11 - <<'PY'
-import importlib.metadata as md
-import gnosis_indus
-
-print("gnosis-indus", md.version("gnosis-indus"))
-PY
-```
-
-Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.<!-- INSTALL-DX:END -->
-
-#### Quick Start
-
-Reproduce the Phase 02 stronger smoke path on any clean Python 3.11
-host:
-
-```bash
-git clone https://github.com/Zer0pa/Indus-Valley.git gnosis-indus
-cd gnosis-indus
-python3.11 -m venv .venv && source .venv/bin/activate
-pip install -e ".[test,numerics]"
-pytest -q
-```
-
-Expected: `14 passed`. The pytest suite reproduces the authority-doc
-query records from `authority/review_pack/search_demo_summary.md`
-against the bundled `artifacts/phase4/indus_catalogue_demo_fixture.json`.
-The fixture is small and authority-anchored; the real full catalogue
-stays `FETCH_EXTERNAL` per `DATA_POLICY.md`. The Phase 4 stability
-caveat (k=70 conditional) remains visible in the package and fixture
-surfaces.
+---
 
 <table width="100%">
 <tr>
@@ -318,3 +285,54 @@ surfaces.
 </td>
 </tr>
 </table>
+
+---
+
+<a id="install-developer-commands-detailed"></a>
+
+## Install / Developer Commands Detailed
+
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install gnosis-indus`.
+Current release: `0.1.0` on [PyPI](https://pypi.org/project/gnosis-indus/).
+Source: [Zer0pa/Indus-Valley](https://github.com/Zer0pa/Indus-Valley/).
+
+```bash
+python3.11 -m pip install gnosis-indus
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import gnosis_indus
+
+print("gnosis-indus", md.version("gnosis-indus"))
+PY
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.<!-- INSTALL-DX:END -->
+
+#### Quick Start
+
+Reproduce the Phase 02 stronger smoke path on any clean Python 3.11
+host:
+
+```bash
+git clone https://github.com/Zer0pa/Indus-Valley.git gnosis-indus
+cd gnosis-indus
+python3.11 -m venv .venv && source .venv/bin/activate
+pip install -e ".[test,numerics]"
+pytest -q
+```
+
+Expected: `14 passed`. The pytest suite reproduces the authority-doc
+query records from `authority/review_pack/search_demo_summary.md`
+against the bundled `artifacts/phase4/indus_catalogue_demo_fixture.json`.
+The fixture is small and authority-anchored; the real full catalogue
+stays `FETCH_EXTERNAL` per `DATA_POLICY.md`. The Phase 4 stability
+caveat (k=70 conditional) remains visible in the package and fixture
+surfaces.
