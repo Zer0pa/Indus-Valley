@@ -18,7 +18,7 @@ For full install, smoke, source, and developer commands, [click here](#install-d
 <tr>
 <td width="100%" valign="top">
 <div><span><b>00 · GNOSIS-INDUS-VALLEY</b> · NON-DECIPHERMENT SEARCH</span> <span>RESEARCH-READY · v0.1.0</span></div>
-      <h1>Indus Script Search and <span>Computational Exploration</span></h1>
+      <h1>4,500 Years Undeciphered, <span>Now Searchable</span></h1>
       <p>Gnosis Indus-Valley &middot; PyPI <em>gnosis-indus</em> v0.1.0 &middot; 412 signs &middot; 70 clusters &middot; github.com/Zer0pa/Indus-Valley</p>
       <p>The Indus script has gone unread for a century. Thousands of marks on seals, tablets, and tools &mdash; catalogued, contested, photographed &mdash; and no one knows what they say. What was missing was not more scholarship. It was a way to search the corpus by the <strong>shape</strong> of the marks, without claiming what they mean. <em>gnosis-indus</em> ships a clean-room <strong>412-sign / 70-cluster</strong> catalogue and answers shape queries in <strong>0.0451 ms</strong>. No glyph is read.</p>
 </td>
